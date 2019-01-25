@@ -1,0 +1,12 @@
+{
+  "modid": "io.benstein.sts.hunted",
+  "name": "The Hunted",
+  "author_list": ["Jammer"],
+  "description": "A base for Slay the Spire to start your own mod from.",
+  "version": "${project.version}",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": "https://api.github.com/repos/jammerware/sts-the-hunted/releases/latest"
+}
+
