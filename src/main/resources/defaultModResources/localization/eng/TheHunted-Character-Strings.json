@@ -1,12 +1,12 @@
 {
         "TheHunted:DefaultCharacter": {
                 "NAMES": [
-                        "The Default",
-                        "the Default"
+                        "The Hunted",
+                        "the Hunted"
                 ],
                 "TEXT": [
-                        "THE_DEFAULT exists and is valid. THE_DEFAULT wishes to T o uuuch# NL Second placeholder line of description text.",
-                        "NL You TOUCH the heart.",
+                        "One day you were harmlessly terrorizing the local village. The next, you were locked up in the dungeons of the Spire. NL You've staged a jailbreak, but someone seems to be following you...",
+                        "NL You recklessly attack the heart.",
                         "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~basic~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
 
                 ]
