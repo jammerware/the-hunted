@@ -42,7 +42,7 @@ public class TheHunted implements
     public static final Logger logger = LogManager.getLogger(TheHunted.class.getName());
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "The Hunted";
+    private static final String MODNAME = "TheHunted";
     private static final String AUTHOR = "Jammer";
     private static final String DESCRIPTION = "Adds the Hunted, a new player class!";
 
@@ -119,7 +119,6 @@ public class TheHunted implements
 
     @Override
     public void receivePostInitialize() {
-
         logger.info("Loading badge image and mod options");
         // Load the Mod Badge
         Texture badgeTexture = new Texture(BADGE_IMAGE);
@@ -169,11 +168,13 @@ public class TheHunted implements
 
         // Add the cards
         logger.info("Adding cards");
+
+        // things
+        BaseMod.addCard(new Strike());
+        BaseMod.addCard(new Defend());
         BaseMod.addCard(new OrbSkill());
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
-        BaseMod.addCard(new DefaultCommonAttack());
         BaseMod.addCard(new DefaultAttackWithVariable());
-        BaseMod.addCard(new DefaultCommonSkill());
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new DefaultUncommonSkill());
         BaseMod.addCard(new DefaultUncommonAttack());
@@ -184,11 +185,11 @@ public class TheHunted implements
 
         // Unlock the cards
         logger.info("Making sure the cards are unlocked.");
+        UnlockTracker.unlockCard(Strike.ID);
+        UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(OrbSkill.ID);
         UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
-        UnlockTracker.unlockCard(DefaultCommonAttack.ID);
         UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
-        UnlockTracker.unlockCard(DefaultCommonSkill.ID);
         UnlockTracker.unlockCard(DefaultCommonPower.ID);
         UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
         UnlockTracker.unlockCard(DefaultUncommonAttack.ID);

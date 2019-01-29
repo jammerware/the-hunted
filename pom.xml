@@ -3,7 +3,7 @@
     <groupId>io.benstein.sts.hunted</groupId>
     <artifactId>TheHunted</artifactId>
     <version>0.0.1</version>
-    <name>DefaultMod</name>
+    <name>TheHunted</name>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -21,7 +21,6 @@
             <version>${SlayTheSpire.version}</version>
             <scope>system</scope>
             <systemPath>${SlayTheSpire.gamePath}/desktop-1.0.jar</systemPath>
-            <!--<systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
@@ -29,7 +28,6 @@
             <version>${ModTheSpire.version}</version>
             <scope>system</scope>
             <systemPath>${SlayTheSpire.workshopPath}/1605060445/ModTheSpire.jar</systemPath>
-            <!--<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
@@ -37,7 +35,6 @@
             <version>5.0.0</version>
             <scope>system</scope>
             <systemPath>${SlayTheSpire.workshopPath}/1605833019/BaseMod.jar</systemPath>
-            <!--<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
@@ -45,14 +42,11 @@
             <version>1.3.2</version>
             <scope>system</scope>
             <systemPath>${SlayTheSpire.workshopPath}/1609158507/StSLib.jar</systemPath>
-            <!--<systemPath>${basedir}/../lib/StSLib.jar</systemPath>-->
         </dependency>
     </dependencies>
 
 
-    <!-- This is how your code is packaged into the jar file-->
     <build>
-        <!-- Change this to match your mods name -->
         <finalName>TheHunted</finalName>
         <plugins>
             <plugin>

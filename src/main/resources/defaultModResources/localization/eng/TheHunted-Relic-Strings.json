@@ -1,9 +1,30 @@
 {
-	"TheHunted:PlaceholderRelic": {
-		"NAME": "Placeholder Energy Relic",
-		"FLAVOR": "The snake is a friend.",
+	"TheHunted:EerieGlow": {
+		"NAME": "Eerie Glow",
+		"FLAVOR": "You pulse intermittently, like a cheap neon sign in a red light district.",
 		"DESCRIPTIONS": [
-			"Gain +1 [R] ."
+			"Your unblocked attacks randomly apply vulnerable, frail, or weak."
+		]
+	},
+	"TheHunted:ImmuneResponse": {
+		"NAME": "Immune Response",
+		"FLAVOR": "Somebody's been drinking their OJ!",
+		"DESCRIPTIONS": [
+			"When you gain a debuff, also gain a random buff of equal length."
+		]
+	},
+	"TheHunted:Perseverance": {
+		"NAME": "Perseverance",
+		"FLAVOR": "It's not over yet.",
+		"DESCRIPTIONS": [
+			"When you shuffle your deck, gain ground."
+		]
+	},
+	"TheHunted:PlaceholderRelic": {
+		"NAME": "Placeholder Relic",
+		"FLAVOR": "You feel sexy.",
+		"DESCRIPTIONS": [
+			"At the start of each combat, gain +1 hotness."
 		]
 	},
 	"TheHunted:PlaceholderRelic2": {

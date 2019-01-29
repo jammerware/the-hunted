@@ -1,14 +1,19 @@
 [
   {
-    "PROPER_NAME": "Placeholder",
+    "PROPER_NAME": "Gain ground",
     "NAMES": [
-      "keyword",
-      "keywords",
-      "Keyword",
-      "Keywords",
-      "Keyword:"
+      "gain ground",
+      "Gain ground"
     ],
-    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+    "DESCRIPTION": "The Warden retreats..."
+  },
+  {
+    "PROPER_NAME": "Lose ground",
+    "NAMES": [
+      "lose ground",
+      "Lose ground"
+    ],
+    "DESCRIPTION": "The Warden advances..."
   }
 ]
 
