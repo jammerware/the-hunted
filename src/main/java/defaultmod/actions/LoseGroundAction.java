@@ -21,13 +21,7 @@ public class LoseGroundAction extends AbstractGameAction {
     public void update() {
         logger.info("Losing ground!");
 
-        AbstractDungeon
-                .actionManager
-                .addToBottom(new ApplyPowerAction(
-                    player,
-                    player,
-                    new WardenPower(player)
-                ));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WardenPower(player, 1), 1));
         this.isDone = true;
     }
 }

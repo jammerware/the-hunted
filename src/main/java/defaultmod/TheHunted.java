@@ -1,23 +1,36 @@
 package defaultmod;
 
-import basemod.BaseMod;
-import basemod.ModLabel;
-import basemod.ModPanel;
-import basemod.interfaces.*;
+import java.nio.charset.StandardCharsets;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.GameDictionary;
-import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import basemod.BaseMod;
+import basemod.ModLabel;
+import basemod.ModPanel;
+import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
 import defaultmod.cards.CrashingBlowCard;
 import defaultmod.cards.Defend;
+import defaultmod.cards.EvadeCard;
 import defaultmod.cards.Strike;
 import defaultmod.characters.TheDefault;
 import defaultmod.patches.AbstractCardEnum;
@@ -25,10 +38,6 @@ import defaultmod.patches.TheHuntedEnum;
 import defaultmod.relics.BrokenManaclesRelic;
 import defaultmod.variables.DefaultCustomVariable;
 import defaultmod.variables.DefaultSecondMagicNumber;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.nio.charset.StandardCharsets;
 
 @SpireInitializer
 public class TheHunted implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber,
@@ -144,15 +153,17 @@ public class TheHunted implements EditCardsSubscriber, EditRelicsSubscriber, Edi
         logger.info("Adding cards");
 
         // things
-        BaseMod.addCard(new Strike());
-        BaseMod.addCard(new Defend());
         BaseMod.addCard(new CrashingBlowCard());
+        BaseMod.addCard(new EvadeCard());
+        BaseMod.addCard(new Defend());
+        BaseMod.addCard(new Strike());
 
         // Unlock the cards
         logger.info("Making sure the cards are unlocked.");
-        UnlockTracker.unlockCard(Strike.ID);
-        UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(CrashingBlowCard.ID);
+        UnlockTracker.unlockCard(Defend.ID);
+        UnlockTracker.unlockCard(EvadeCard.ID);
+        UnlockTracker.unlockCard(Strike.ID);
 
         logger.info("Done adding cards!");
     }

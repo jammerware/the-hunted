@@ -1,14 +1,18 @@
 {
-  "TheHunted:Strike": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
+  "TheHunted:CrashingBlow": {
+    "NAME": "Crashing Blow",
+    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! Vulnerable. NL Lose ground."
   },
   "TheHunted:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
-  "TheHunted:CrashingBlow": {
-    "NAME": "Crashing Blow",
-    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! Vulnerable. NL You're winded."
+  "TheHunted:Evade": {
+    "NAME": "Evade",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak. NL Gain ground."
+  },
+  "TheHunted:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
   }
 }

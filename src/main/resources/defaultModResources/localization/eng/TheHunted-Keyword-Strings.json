@@ -7,9 +7,9 @@
     "DESCRIPTION": "The Warden retreats..."
   },
   {
-    "PROPER_NAME": "Winded",
+    "PROPER_NAME": "Lose ground",
     "NAMES": [
-      "winded"
+      "lose"
     ],
     "DESCRIPTION": "The Warden advances..."
   }

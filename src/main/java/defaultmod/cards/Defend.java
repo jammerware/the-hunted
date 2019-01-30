@@ -37,14 +37,13 @@ public class Defend extends CustomCard {
         this.tags.add(BaseModCardTags.BASIC_DEFEND);
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager
+                .addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
     }
 
-    //Upgraded stats.
+    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

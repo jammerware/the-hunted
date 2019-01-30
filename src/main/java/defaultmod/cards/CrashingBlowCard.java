@@ -25,7 +25,7 @@ public class CrashingBlowCard extends CustomCard {
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int BASE_DAMAGE = 9;
+    private static final int BASE_DAMAGE = 1;
     private static final int UPGRADE_DAMAGE = 2;
     private static final int BASE_VULN = 1;
     private static final int UPGRADE_VULN = 1;
@@ -34,12 +34,12 @@ public class CrashingBlowCard extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG = "defaultModResources/images/cards/Power.png";
+    public static final String IMG = "defaultModResources/images/cards/Attack.png";
 
     public CrashingBlowCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = BASE_VULN;
         baseDamage = damage = BASE_DAMAGE;
+        baseMagicNumber = magicNumber = BASE_VULN;
     }
 
     @Override
@@ -49,8 +49,8 @@ public class CrashingBlowCard extends CustomCard {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         // apply vulnerability
-        AbstractDungeon.actionManager
-                .addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(p, this.magicNumber, false)));
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
 
         // lose ground
         AbstractDungeon.actionManager.addToBottom(new LoseGroundAction(p));

@@ -21,7 +21,8 @@
                         "is far behind you.",
                         "is slowly getting closer to you.",
                         "is close behind you.",
-                        "is almost on top of you!"
+                        "is almost on top of you!",
+                        "caught you!"
                 ]
         }
 }

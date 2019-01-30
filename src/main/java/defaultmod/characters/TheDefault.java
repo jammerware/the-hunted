@@ -33,6 +33,7 @@ import basemod.animations.SpriterAnimation;
 import defaultmod.TheHunted;
 import defaultmod.cards.CrashingBlowCard;
 import defaultmod.cards.Defend;
+import defaultmod.cards.EvadeCard;
 import defaultmod.cards.Strike;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.relics.BrokenManaclesRelic;
@@ -46,7 +47,7 @@ public class TheDefault extends CustomPlayer {
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 9;
+    public static final int CARD_DRAW = 10;
     public static final int ORB_SLOTS = 3;
 
     // =============== /BASE STATS/ =================
@@ -133,6 +134,7 @@ public class TheDefault extends CustomPlayer {
         retVal.add(Defend.ID);
 
         retVal.add(CrashingBlowCard.ID);
+        retVal.add(EvadeCard.ID);
 
         return retVal;
     }
