@@ -6,6 +6,6 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 public class LibraryTypeEnum {
 
     @SpireEnum
-    public static CardLibrary.LibraryType DEFAULT_GRAY;
+    public static CardLibrary.LibraryType HUNTED_ORANGE;
 
 }

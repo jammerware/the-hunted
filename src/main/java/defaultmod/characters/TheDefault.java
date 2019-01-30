@@ -1,7 +1,14 @@
 package defaultmod.characters;
 
-import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpriterAnimation;
+import static defaultmod.TheHunted.THE_DEFAULT_CORPSE;
+import static defaultmod.TheHunted.THE_DEFAULT_SHOULDER_1;
+import static defaultmod.TheHunted.THE_DEFAULT_SHOULDER_2;
+import static defaultmod.TheHunted.THE_DEFAULT_SKELETON_ATLAS;
+import static defaultmod.TheHunted.THE_DEFAULT_SKELETON_JSON;
+import static defaultmod.TheHunted.makeID;
+
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -17,21 +24,18 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import defaultmod.TheHunted;
-import defaultmod.cards.*;
-import defaultmod.patches.AbstractCardEnum;
-import defaultmod.relics.DefaultClickableRelic;
-import defaultmod.relics.PlaceholderRelic;
-import defaultmod.relics.PlaceholderRelic2;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-
-import static defaultmod.TheHunted.*;
-//Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
-//and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
-//All text (starting description and loadout, anything labeled TEXT[]) can be found in TheHunted-Character-Strings.json in the resources
+import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpriterAnimation;
+import defaultmod.TheHunted;
+import defaultmod.cards.CrashingBlowCard;
+import defaultmod.cards.Defend;
+import defaultmod.cards.Strike;
+import defaultmod.patches.AbstractCardEnum;
+import defaultmod.relics.BrokenManaclesRelic;
 
 public class TheDefault extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(TheHunted.class.getName());
@@ -47,7 +51,6 @@ public class TheDefault extends CustomPlayer {
 
     // =============== /BASE STATS/ =================
 
-
     // =============== STRINGS =================
 
     private static final String ID = makeID("DefaultCharacter");
@@ -57,11 +60,9 @@ public class TheDefault extends CustomPlayer {
 
     // =============== /STRINGS/ =================
 
-
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
-    public static final String[] orbTextures = {
-            "defaultModResources/images/char/defaultCharacter/orb/layer1.png",
+    public static final String[] orbTextures = { "defaultModResources/images/char/defaultCharacter/orb/layer1.png",
             "defaultModResources/images/char/defaultCharacter/orb/layer2.png",
             "defaultModResources/images/char/defaultCharacter/orb/layer3.png",
             "defaultModResources/images/char/defaultCharacter/orb/layer4.png",
@@ -71,24 +72,22 @@ public class TheDefault extends CustomPlayer {
             "defaultModResources/images/char/defaultCharacter/orb/layer2d.png",
             "defaultModResources/images/char/defaultCharacter/orb/layer3d.png",
             "defaultModResources/images/char/defaultCharacter/orb/layer4d.png",
-            "defaultModResources/images/char/defaultCharacter/orb/layer5d.png",};
+            "defaultModResources/images/char/defaultCharacter/orb/layer5d.png", };
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
-
 
     // =============== CHARACTER CLASS START =================
 
     public TheDefault(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures,
-                "defaultModResources/images/char/defaultCharacter/orb/vfx.png", null,
+        super(name, setClass, orbTextures, "defaultModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
                         "defaultModResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
 
-
-        // =============== TEXTURES, ENERGY, LOADOUT =================  
+        // =============== TEXTURES, ENERGY, LOADOUT =================
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
-                // I left these in TheHunted.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
+                // I left these in TheHunted.java (Ctrl+click them to see where they are,
+                // Ctrl+hover to see what they read.)
                 THE_DEFAULT_SHOULDER_1, // campfire pose
                 THE_DEFAULT_SHOULDER_2, // another campfire pose
                 THE_DEFAULT_CORPSE, // dead corpse
@@ -96,25 +95,16 @@ public class TheDefault extends CustomPlayer {
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
 
+        // =============== ANIMATIONS =================
 
-        // =============== ANIMATIONS =================  
-
-        loadAnimation(
-                THE_DEFAULT_SKELETON_ATLAS,
-                THE_DEFAULT_SKELETON_JSON,
-                1.0f);
+        loadAnimation(THE_DEFAULT_SKELETON_ATLAS, THE_DEFAULT_SKELETON_JSON, 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
         // =============== /ANIMATIONS/ =================
 
-
-        // =============== TEXT BUBBLE LOCATION =================
-
         dialogX = (drawX + 0.0F * Settings.scale); // set location for text bubbles
         dialogY = (drawY + 220.0F * Settings.scale); // you can just copy these values
-
-        // =============== /TEXT BUBBLE LOCATION/ =================
 
     }
 
@@ -123,9 +113,8 @@ public class TheDefault extends CustomPlayer {
     // Starting description and loadout
     @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo(NAMES[0], TEXT[0],
-                STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this, getStartingRelics(),
-                getStartingDeck(), false);
+        return new CharSelectInfo(NAMES[0], TEXT[0], STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this,
+                getStartingRelics(), getStartingDeck(), false);
     }
 
     // Starting Deck
@@ -143,20 +132,17 @@ public class TheDefault extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
 
+        retVal.add(CrashingBlowCard.ID);
+
         return retVal;
     }
 
-    // Starting Relics	
+    // Starting Relics
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(PlaceholderRelic.ID);
-        retVal.add(PlaceholderRelic2.ID);
-        retVal.add(DefaultClickableRelic.ID);
-
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
-        UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
+        retVal.add(BrokenManaclesRelic.ID);
+        UnlockTracker.markRelicAsSeen(BrokenManaclesRelic.ID);
 
         return retVal;
     }
@@ -165,8 +151,8 @@ public class TheDefault extends CustomPlayer {
     @Override
     public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f); // Sound Effect
-        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
-                false); // Screen Effect
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false); // Screen
+                                                                                                            // Effect
     }
 
     // Character Select on-button-press sound effect
@@ -176,16 +162,17 @@ public class TheDefault extends CustomPlayer {
     }
 
     // Should return how much HP your maximum HP reduces by when starting a run at
-    // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp respectively)
+    // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp
+    // respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 4;
     }
 
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return AbstractCardEnum.DEFAULT_GRAY;
+        return AbstractCardEnum.HUNTED_ORANGE;
     }
 
     // Should return a color object to be used to color the trail of moving cards
@@ -206,9 +193,12 @@ public class TheDefault extends CustomPlayer {
     public String getLocalizedCharacterName() {
         return NAMES[0];
     }
-    //Which card should be obtainable from the Match and Keep event?
+
+    // Which card should be obtainable from the Match and Keep event?
     @Override
-    public AbstractCard getStartCardForEvent() { return new Strike(); }
+    public AbstractCard getStartCardForEvent() {
+        return new Strike();
+    }
 
     // The class name as it appears next to your player name in-game
     @Override
@@ -216,13 +206,15 @@ public class TheDefault extends CustomPlayer {
         return NAMES[1];
     }
 
-    // Should return a new instance of your character, sending name as its name parameter.
+    // Should return a new instance of your character, sending name as its name
+    // parameter.
     @Override
     public AbstractPlayer newInstance() {
         return new TheDefault(name, chosenClass);
     }
 
-    // Should return a Color object to be used to color the miniature card images in run history.
+    // Should return a Color object to be used to color the miniature card images in
+    // run history.
     @Override
     public Color getCardRenderColor() {
         return TheHunted.DEFAULT_GRAY;
@@ -231,17 +223,17 @@ public class TheDefault extends CustomPlayer {
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
-    public Color getSlashAttackColor() { return TheHunted.DEFAULT_GRAY; }
+    public Color getSlashAttackColor() {
+        return TheHunted.DEFAULT_GRAY;
+    }
 
     // Should return an AttackEffect array of any size greater than 0. These effects
     // will be played in sequence as your character's finishing combo on the heart.
     // Attack effects are the same as used in DamageAction and the like.
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
-        return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY};
+        return new AbstractGameAction.AttackEffect[] { AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY, AbstractGameAction.AttackEffect.BLUNT_HEAVY };
     }
 
     // Should return a string containing what text is shown when your character is
@@ -254,7 +246,8 @@ public class TheDefault extends CustomPlayer {
 
     // The vampire events refer to the base game characters as "brother", "sister",
     // and "broken one" respectively.This method should return a String containing
-    // the full text that will be displayed as the first screen of the vampires event.
+    // the full text that will be displayed as the first screen of the vampires
+    // event.
     @Override
     public String getVampireText() {
         return TEXT[2];

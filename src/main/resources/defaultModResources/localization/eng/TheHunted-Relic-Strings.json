@@ -1,45 +1,17 @@
 {
-	"TheHunted:EerieGlow": {
-		"NAME": "Eerie Glow",
-		"FLAVOR": "You pulse intermittently, like a cheap neon sign in a red light district.",
-		"DESCRIPTIONS": [
-			"Your unblocked attacks randomly apply vulnerable, frail, or weak."
-		]
-	},
-	"TheHunted:ImmuneResponse": {
-		"NAME": "Immune Response",
-		"FLAVOR": "Somebody's been drinking their OJ!",
-		"DESCRIPTIONS": [
-			"When you gain a debuff, also gain a random buff of equal length."
-		]
-	},
-	"TheHunted:Perseverance": {
+
+	"TheHunted:PerseveranceRelic": {
 		"NAME": "Perseverance",
 		"FLAVOR": "It's not over yet.",
 		"DESCRIPTIONS": [
 			"When you shuffle your deck, gain ground."
 		]
 	},
-	"TheHunted:PlaceholderRelic": {
-		"NAME": "Placeholder Relic",
-		"FLAVOR": "You feel sexy.",
+	"TheHunted:BrokenManaclesRelic": {
+		"NAME": "Broken Manacles",
+		"FLAVOR": "It's not over yet.",
 		"DESCRIPTIONS": [
-			"At the start of each combat, gain +1 hotness."
-		]
-	},
-	"TheHunted:PlaceholderRelic2": {
-		"NAME": "Placeholder Relic 2",
-		"FLAVOR": "You feel stronger.",
-		"DESCRIPTIONS": [
-			"At the start of each combat, gain +1 Strength."
-		]
-	},
-	"TheHunted:DefaultClickableRelic": {
-		"NAME": "Right-Clicky Relic",
-		"FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
-		"DESCRIPTIONS": [
-			"[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
-			"YOU ARE MINE!"
+			"The Warden is chasing you. When she catches you, your turn ends, you gain 2 weak, 2 vulnerable, and 2 frail."
 		]
 	}
 }

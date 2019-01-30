@@ -1,10 +1,27 @@
 {
-"TheHunted:CommonPower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["You applied ", " keyword.", " keywords."]
-},
-"TheHunted:RarePower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH ", " enemy." , " enemies."]
-}
+        "TheHunted:EerieGlowPower": {
+                "NAME": "Eerie Glow",
+                "FLAVOR": "You pulse intermittently, like a cheap neon sign in a red light district.",
+                "DESCRIPTIONS": [
+                        "Your unblocked attacks randomly apply vulnerable, frail, or weak."
+                ]
+        },
+        "TheHunted:ImmuneResponsePower": {
+                "NAME": "Immune Response",
+                "FLAVOR": "Somebody's been drinking their OJ!",
+                "DESCRIPTIONS": [
+                        "When you gain a debuff, also gain a random buff of equal length."
+                ]
+        },
+        "TheHunted:WardenPower": {
+                "NAME": "The Warden's Pursuit",
+                "DESCRIPTIONS": [
+                        "The Warden ",
+                        "is very far behind you.",
+                        "is far behind you.",
+                        "is slowly getting closer to you.",
+                        "is close behind you.",
+                        "is almost on top of you!"
+                ]
+        }
 }

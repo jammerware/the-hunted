@@ -1,5 +1,8 @@
 *.class
 
+# VS Code
+.vscode/settings.json
+
 # IntelliJ
 .idea/
 out/

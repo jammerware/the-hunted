@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.actions.common.*;
 
 import defaultmod.powers.CommonPower;
@@ -19,9 +18,8 @@ public class UncommonPowerAction extends AbstractGameAction {
     private int energyOnUse;
     private boolean upgraded;
 
-    public UncommonPowerAction(final AbstractPlayer p, final AbstractMonster m,
-            final int magicNumber, final boolean upgraded,
-            final DamageInfo.DamageType damageTypeForTurn, final boolean freeToPlayOnce,
+    public UncommonPowerAction(final AbstractPlayer p, final AbstractMonster m, final int magicNumber,
+            final boolean upgraded, final DamageInfo.DamageType damageTypeForTurn, final boolean freeToPlayOnce,
             final int energyOnUse)
 
     {
@@ -50,9 +48,8 @@ public class UncommonPowerAction extends AbstractGameAction {
         if (effect > 0) {
             for (int i = 0; i < effect; ++i) {
 
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                        new CommonPower(p, p, magicNumber), magicNumber,
-                        AttackEffect.BLUNT_LIGHT));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber),
+                        magicNumber, AttackEffect.BLUNT_LIGHT));
 
             }
             if (!freeToPlayOnce) {

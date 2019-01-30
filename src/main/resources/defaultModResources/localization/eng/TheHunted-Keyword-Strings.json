@@ -1,20 +1,16 @@
 [
   {
-    "PROPER_NAME": "Gain ground",
+    "PROPER_NAME": "Run",
     "NAMES": [
-      "gain ground",
-      "Gain ground"
+      "run"
     ],
     "DESCRIPTION": "The Warden retreats..."
   },
   {
-    "PROPER_NAME": "Lose ground",
+    "PROPER_NAME": "Winded",
     "NAMES": [
-      "lose ground",
-      "Lose ground"
+      "winded"
     ],
     "DESCRIPTION": "The Warden advances..."
   }
 ]
-
-

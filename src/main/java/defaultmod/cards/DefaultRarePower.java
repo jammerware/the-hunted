@@ -41,7 +41,7 @@ public class DefaultRarePower extends CustomCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = AbstractCardEnum.DEFAULT_GRAY;
+    public static final CardColor COLOR = AbstractCardEnum.HUNTED_ORANGE;
 
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;
