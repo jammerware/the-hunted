@@ -34,7 +34,9 @@ public class Strike extends CustomCard {
     public Strike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = DAMAGE;
+
         this.tags.add(BaseModCardTags.BASIC_STRIKE);
+        this.tags.add(CardTags.STRIKE);
     }
 
     @Override

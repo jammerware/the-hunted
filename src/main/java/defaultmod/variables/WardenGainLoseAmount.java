@@ -26,7 +26,7 @@ public class WardenGainLoseAmount extends DynamicVariable {
 
     @Override
     public int baseValue(AbstractCard card) {
-        return Math.abs(((AbstractWardenGroundCard) card).wardenBaseGainLoseAmount);
+        return Math.abs(((AbstractWardenGroundCard) card).baseWardenGainLoseAmount);
     }
 
     @Override

@@ -13,6 +13,13 @@
                         "When you gain a debuff, also gain a random buff of equal length."
                 ]
         },
+        "TheHunted:PerseverancePower": {
+                "NAME": "Perseverance",
+                "FLAVOR": "You're showing neither pain nor fear.",
+                "DESCRIPTIONS": [
+                        "When you shuffle your deck, acquire ground."
+                ]
+        }
         "TheHunted:WardenPower": {
                 "NAME": "The Warden's Pursuit",
                 "DESCRIPTIONS": [

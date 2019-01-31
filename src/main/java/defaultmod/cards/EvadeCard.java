@@ -39,7 +39,7 @@ public class EvadeCard extends AbstractWardenGroundCard {
         
         baseBlock = block = BASE_BLOCK;
         baseMagicNumber = magicNumber = BASE_WEAK;
-        wardenBaseGainLoseAmount = wardenGainLoseAmount = WARDEN_LOSE_GROUND;
+        baseWardenGainLoseAmount = wardenGainLoseAmount = WARDEN_LOSE_GROUND;
     }
 
     @Override

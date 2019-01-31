@@ -3,7 +3,7 @@ package defaultmod.cards;
 import basemod.abstracts.CustomCard;
 
 public abstract class AbstractWardenGroundCard extends CustomCard {
-    public int wardenBaseGainLoseAmount;
+    public int baseWardenGainLoseAmount;
     public int wardenGainLoseAmount;
     public boolean upgradedWardenGainLoseAmount;
     public boolean isWardenGainLoseAmountModified;
@@ -18,7 +18,7 @@ public abstract class AbstractWardenGroundCard extends CustomCard {
     public void displayUpgrades() {
         if (upgradedWardenGainLoseAmount) {
             // Show how the number changes, as out of combat, the base number of a card is shown.
-            wardenBaseGainLoseAmount = wardenGainLoseAmount;
+            baseWardenGainLoseAmount = wardenGainLoseAmount;
             // Modified = true, color it green to highlight that the number is being changed.
             isWardenGainLoseAmountModified = true;
         }
@@ -27,8 +27,8 @@ public abstract class AbstractWardenGroundCard extends CustomCard {
 
     public void upgradeWardenGainLoseAmount(int amount) {
         // I'm not sure if you HAVE to set the base value to the upgraded value or not; the example does
-        this.wardenBaseGainLoseAmount = this.wardenGainLoseAmount + amount;
-        this.wardenGainLoseAmount = this.wardenBaseGainLoseAmount;
+        this.baseWardenGainLoseAmount = this.wardenGainLoseAmount + amount;
+        this.wardenGainLoseAmount = this.baseWardenGainLoseAmount;
         this.upgradedWardenGainLoseAmount = true;
     }
 }

@@ -41,7 +41,7 @@ public class CrashingBlowCard extends AbstractWardenGroundCard {
 
         baseDamage = damage = BASE_DAMAGE;
         baseMagicNumber = magicNumber = BASE_VULN;
-        wardenBaseGainLoseAmount = wardenGainLoseAmount = BASE_GROUND_LOSE;
+        baseWardenGainLoseAmount = wardenGainLoseAmount = BASE_GROUND_LOSE;
     }
 
     @Override

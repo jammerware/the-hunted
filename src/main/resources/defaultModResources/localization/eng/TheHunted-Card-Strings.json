@@ -1,4 +1,8 @@
 {
+  "TheHunted:AQuietMoment": {
+    "NAME": "A Quiet Moment",
+    "DESCRIPTION": "Draw !M! cards. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
+  },
   "TheHunted:AnemicSlap": {
     "NAME": "Anemic Slap",
     "DESCRIPTION": "Deal !D! damage. NL Apply Weak to yourself."
@@ -15,9 +19,17 @@
     "NAME": "Evade",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak. NL Acquire !TheHunted:WardenGainLoseAmountVariable! ground."
   },
+  "TheHunted:Perseverance": {
+    "NAME": "Perseverance",
+    "DESCRIPTION": "Gain ground whenever you shuffle your draw pile."
+  },
   "TheHunted:Ransack": {
     "NAME": "Ransack",
     "DESCRIPTION": "Draw !M! cards. NL Discard 1 card."
+  },
+  "TheHunted:Scramble": {
+    "NAME": "Scramble",
+    "DESCRIPTION": "Draw a card. NL Gain 1 energy. NL Gain !B! Block. NL Discard a card. NL Acquire !TheHunted:WardenGainLoseAmountVariable! ground."
   },
   "TheHunted:SeepThrough": {
     "NAME": "Seep Through",
@@ -29,6 +41,6 @@
   },
   "TheHunted:Taunt": {
     "NAME": "Taunt",
-    "DESCRIPTION": "Gain !B! Block. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
+    "DESCRIPTION": "Gain !B! Block. NL Lose !TheHunted:WardenGainLoseAmountVariable!ground."
   }
 }

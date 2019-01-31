@@ -11,7 +11,6 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -149,16 +148,20 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
 
         // things
         BaseMod.addCard(new AnemicSlapCard());
+        BaseMod.addCard(new AQuietMomentCard());
         BaseMod.addCard(new CrashingBlowCard());
         BaseMod.addCard(new EvadeCard());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new RansackCard());
+        BaseMod.addCard(new ScrambleCard());
         BaseMod.addCard(new SeepThroughCard());
         BaseMod.addCard(new Strike());
 
         // Unlock the cards
         logger.info("Making sure the cards are unlocked.");
         UnlockTracker.unlockCard(AnemicSlapCard.ID);
+        UnlockTracker.unlockCard(AQuietMomentCard.ID);
+        UnlockTracker.unlockCard(ScrambleCard.ID);
         UnlockTracker.unlockCard(CrashingBlowCard.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(EvadeCard.ID);
@@ -188,10 +191,6 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 "defaultModResources/localization/eng/TheHunted-Character-Strings.json");
-
-        // OrbStrings
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                "defaultModResources/localization/eng/TheHunted-Orb-Strings.json");
 
         logger.info("Done editing strings");
     }
