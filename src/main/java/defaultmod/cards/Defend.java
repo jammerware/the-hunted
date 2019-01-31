@@ -9,12 +9,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 
-import defaultmod.TheHunted;
+import defaultmod.TheHuntedMod;
 import defaultmod.patches.AbstractCardEnum;
 
 // Gain 5(8) Block.
 public class Defend extends CustomCard {
-    public static final String ID = TheHunted.makeID("Defend");
+    public static final String ID = TheHuntedMod.makeID("Defend");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "defaultModResources/images/cards/Skill.png";

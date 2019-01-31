@@ -11,11 +11,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 
-import defaultmod.TheHunted;
+import defaultmod.TheHuntedMod;
 import defaultmod.patches.AbstractCardEnum;
 
 public class Strike extends CustomCard {
-    public static final String ID = TheHunted.makeID("Strike");
+    public static final String ID = TheHuntedMod.makeID("Strike");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "defaultModResources/images/cards/Attack.png";
@@ -29,7 +29,7 @@ public class Strike extends CustomCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 9;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public Strike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -37,18 +37,13 @@ public class Strike extends CustomCard {
         this.tags.add(BaseModCardTags.BASIC_STRIKE);
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        DamageAction action = new DamageAction(
-                m,
-                new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL
-        );
+        // BONK!
+        DamageAction action = new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
 
-        AbstractDungeon
-                .actionManager
-                .addToBottom(action);
+        AbstractDungeon.actionManager.addToBottom(action);
     }
 
     // Upgraded stats.

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import defaultmod.TheHunted;
+import defaultmod.TheHuntedMod;
 import defaultmod.patches.AbstractCardEnum;
 
 public class DefaultSecondMagicNumberSkill extends AbstractDefaultCard {
@@ -29,7 +29,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = TheHunted.makeID("DefaultSecondMagicNumberSkill");
+    public static final String ID = TheHuntedMod.makeID("DefaultSecondMagicNumberSkill");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "defaultModResources/images/cards/Skill.png";

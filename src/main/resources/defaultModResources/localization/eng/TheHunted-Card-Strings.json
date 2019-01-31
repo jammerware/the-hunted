@@ -1,7 +1,7 @@
 {
   "TheHunted:CrashingBlow": {
     "NAME": "Crashing Blow",
-    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! Vulnerable. NL Lose ground."
+    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! Vulnerable. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
   },
   "TheHunted:Defend": {
     "NAME": "Defend",
@@ -9,7 +9,7 @@
   },
   "TheHunted:Evade": {
     "NAME": "Evade",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak. NL Gain ground."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak. NL Acquire !TheHunted:WardenGainLoseAmountVariable! ground."
   },
   "TheHunted:Strike": {
     "NAME": "Strike",

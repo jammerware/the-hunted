@@ -36,14 +36,13 @@ import defaultmod.characters.TheDefault;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.patches.TheHuntedEnum;
 import defaultmod.relics.BrokenManaclesRelic;
-import defaultmod.variables.DefaultCustomVariable;
-import defaultmod.variables.DefaultSecondMagicNumber;
+import defaultmod.variables.WardenGainLoseAmount;
 
 @SpireInitializer
-public class TheHunted implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber,
+public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber,
         EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
 
-    public static final Logger logger = LogManager.getLogger(TheHunted.class.getName());
+    public static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
 
     // This is for the in-game mod settings panel.
     private static final String MODNAME = "io.benstein.sts.hunted";
@@ -82,7 +81,7 @@ public class TheHunted implements EditCardsSubscriber, EditRelicsSubscriber, Edi
     public static final String THE_DEFAULT_SKELETON_ATLAS = "defaultModResources/images/char/defaultCharacter/skeleton.atlas";
     public static final String THE_DEFAULT_SKELETON_JSON = "defaultModResources/images/char/defaultCharacter/skeleton.json";
 
-    public TheHunted() {
+    public TheHuntedMod() {
         logger.info("Subscribe to BaseMod hooks");
 
         BaseMod.subscribe(this);
@@ -101,7 +100,7 @@ public class TheHunted implements EditCardsSubscriber, EditRelicsSubscriber, Edi
     @SuppressWarnings("unused")
     public static void initialize() {
         logger.info("========================= Initializing The Hunted. Hi. =========================");
-        TheHunted mod = new TheHunted();
+        TheHuntedMod mod = new TheHuntedMod();
         logger.info("========================= /The Hunted is good to go./ =========================");
     }
 
@@ -144,10 +143,9 @@ public class TheHunted implements EditCardsSubscriber, EditRelicsSubscriber, Edi
 
     @Override
     public void receiveEditCards() {
-        // Add the Custom Dynamic variables
+        // Add the custom dynamic variables (for warden gain/loss card descriptions)
         logger.info("Adding variables");
-        BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new WardenGainLoseAmount());
 
         // Add the cards
         logger.info("Adding cards");

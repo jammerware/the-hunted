@@ -1,11 +1,11 @@
 package defaultmod.characters;
 
-import static defaultmod.TheHunted.THE_DEFAULT_CORPSE;
-import static defaultmod.TheHunted.THE_DEFAULT_SHOULDER_1;
-import static defaultmod.TheHunted.THE_DEFAULT_SHOULDER_2;
-import static defaultmod.TheHunted.THE_DEFAULT_SKELETON_ATLAS;
-import static defaultmod.TheHunted.THE_DEFAULT_SKELETON_JSON;
-import static defaultmod.TheHunted.makeID;
+import static defaultmod.TheHuntedMod.THE_DEFAULT_CORPSE;
+import static defaultmod.TheHuntedMod.THE_DEFAULT_SHOULDER_1;
+import static defaultmod.TheHuntedMod.THE_DEFAULT_SHOULDER_2;
+import static defaultmod.TheHuntedMod.THE_DEFAULT_SKELETON_ATLAS;
+import static defaultmod.TheHuntedMod.THE_DEFAULT_SKELETON_JSON;
+import static defaultmod.TheHuntedMod.makeID;
 
 import java.util.ArrayList;
 
@@ -30,7 +30,7 @@ import org.apache.logging.log4j.Logger;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
-import defaultmod.TheHunted;
+import defaultmod.TheHuntedMod;
 import defaultmod.cards.CrashingBlowCard;
 import defaultmod.cards.Defend;
 import defaultmod.cards.EvadeCard;
@@ -39,7 +39,7 @@ import defaultmod.patches.AbstractCardEnum;
 import defaultmod.relics.BrokenManaclesRelic;
 
 public class TheDefault extends CustomPlayer {
-    public static final Logger logger = LogManager.getLogger(TheHunted.class.getName());
+    public static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
 
     // =============== BASE STATS =================
 
@@ -180,7 +180,7 @@ public class TheDefault extends CustomPlayer {
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return TheHunted.DEFAULT_GRAY;
+        return TheHuntedMod.DEFAULT_GRAY;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -219,14 +219,14 @@ public class TheDefault extends CustomPlayer {
     // run history.
     @Override
     public Color getCardRenderColor() {
-        return TheHunted.DEFAULT_GRAY;
+        return TheHuntedMod.DEFAULT_GRAY;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return TheHunted.DEFAULT_GRAY;
+        return TheHuntedMod.DEFAULT_GRAY;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects
