@@ -19,7 +19,7 @@ public class WardenPower extends AbstractPower {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = player;
-        this.amount = 0;
+        this.amount = 1;
         this.type = PowerType.DEBUFF;
         this.isTurnBased = false;
         this.img = ImageMaster.loadImage(IMG);

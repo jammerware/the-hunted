@@ -31,7 +31,7 @@ public class BrokenManaclesRelic extends CustomRelic {
 
         flash();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new WardenPower(AbstractDungeon.player), 1));
+                new WardenPower(AbstractDungeon.player)));
     }
 
     @Override
