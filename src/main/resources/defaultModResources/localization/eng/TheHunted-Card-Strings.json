@@ -1,7 +1,11 @@
 {
+  "TheHunted:AnemicSlap": {
+    "NAME": "Anemic Slap",
+    "DESCRIPTION": "Deal !D! damage. NL Apply Weak to yourself."
+  },
   "TheHunted:CrashingBlow": {
     "NAME": "Crashing Blow",
-    "DESCRIPTION": "Deal !D! Damage. NL Apply !M! Vulnerable. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
   },
   "TheHunted:Defend": {
     "NAME": "Defend",
@@ -11,8 +15,20 @@
     "NAME": "Evade",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak. NL Acquire !TheHunted:WardenGainLoseAmountVariable! ground."
   },
+  "TheHunted:Ransack": {
+    "NAME": "Ransack",
+    "DESCRIPTION": "Draw !M! cards. NL Discard 1 card."
+  },
+  "TheHunted:SeepThrough": {
+    "NAME": "Seep Through",
+    "DESCRIPTION": "Deal !D! damage. NL Ignores armor."
+  },
   "TheHunted:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "TheHunted:Taunt": {
+    "NAME": "Taunt",
+    "DESCRIPTION": "Gain !B! Block. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
   }
 }

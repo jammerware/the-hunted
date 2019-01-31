@@ -28,14 +28,11 @@ import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-import defaultmod.cards.CrashingBlowCard;
-import defaultmod.cards.Defend;
-import defaultmod.cards.EvadeCard;
-import defaultmod.cards.Strike;
+import defaultmod.cards.*;
 import defaultmod.characters.TheDefault;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.patches.TheHuntedEnum;
-import defaultmod.relics.BrokenManaclesRelic;
+import defaultmod.relics.*;
 import defaultmod.variables.WardenGainLoseAmount;
 
 @SpireInitializer
@@ -151,16 +148,22 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         logger.info("Adding cards");
 
         // things
+        BaseMod.addCard(new AnemicSlapCard());
         BaseMod.addCard(new CrashingBlowCard());
         BaseMod.addCard(new EvadeCard());
         BaseMod.addCard(new Defend());
+        BaseMod.addCard(new RansackCard());
+        BaseMod.addCard(new SeepThroughCard());
         BaseMod.addCard(new Strike());
 
         // Unlock the cards
         logger.info("Making sure the cards are unlocked.");
+        UnlockTracker.unlockCard(AnemicSlapCard.ID);
         UnlockTracker.unlockCard(CrashingBlowCard.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(EvadeCard.ID);
+        UnlockTracker.unlockCard(RansackCard.ID);
+        UnlockTracker.unlockCard(SeepThroughCard.ID);
         UnlockTracker.unlockCard(Strike.ID);
 
         logger.info("Done adding cards!");
