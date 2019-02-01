@@ -52,14 +52,11 @@ public class GainLoseGroundAction extends AbstractGameAction {
 
                 AbstractDungeon.actionManager
                         .addToBottom(new ReducePowerAction(player, player, wardenPower, -wardenGainsGround));
-                
-                wardenPower.playApplyPowerSfx();
             } else {
                 logger.info("The Warden backs off as far as she can.");
 
                 AbstractDungeon.actionManager.addToBottom(
                         new ReducePowerAction(player, player, wardenPower, wardenPower.amount - MIN_STACKS));
-                wardenPower.playApplyPowerSfx();
             }
         }
 

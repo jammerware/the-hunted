@@ -1,16 +1,9 @@
 [
   {
-    "PROPER_NAME": "Gain ground",
+    "PROPER_NAME": "Ground",
     "NAMES": [
-      "acquire"
+      "ground"
     ],
-    "DESCRIPTION": "The Warden retreats..."
-  },
-  {
-    "PROPER_NAME": "Lose ground",
-    "NAMES": [
-      "lose"
-    ],
-    "DESCRIPTION": "The Warden advances..."
+    "DESCRIPTION": "When you gain ground, the Warden falls back. NL When you lose ground, the Warden closes the distance."
   }
 ]

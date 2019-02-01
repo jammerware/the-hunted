@@ -15,9 +15,13 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "TheHunted:EntropyProjector": {
+    "NAME": "Entropy Projector",
+    "DESCRIPTION": "Costs 1 less [E] for each debuff you've applied to yourself this combat. NL Gain !B! Block."
+  },
   "TheHunted:Evade": {
     "NAME": "Evade",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak. NL Acquire !TheHunted:WardenGainLoseAmountVariable! ground."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to yourself. NL Gain !TheHunted:WardenGainLoseAmountVariable! ground."
   },
   "TheHunted:Perseverance": {
     "NAME": "Perseverance",
@@ -29,7 +33,7 @@
   },
   "TheHunted:Scramble": {
     "NAME": "Scramble",
-    "DESCRIPTION": "Draw a card. NL Gain 1 energy. NL Gain !B! Block. NL Discard a card. NL Acquire !TheHunted:WardenGainLoseAmountVariable! ground."
+    "DESCRIPTION": "Draw a card. NL Gain [E]. NL Gain !B! Block. NL Discard a card. NL Gain !TheHunted:WardenGainLoseAmountVariable! ground."
   },
   "TheHunted:SeepThrough": {
     "NAME": "Seep Through",

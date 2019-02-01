@@ -4,8 +4,12 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class AbstractCardEnum {
-
+    // color stuff
     @SpireEnum
     public static AbstractCard.CardColor HUNTED_ORANGE;
+
+    // custom tags
+    @SpireEnum
+    public static AbstractCard.CardTags SELF_DEBUFF;
 
 }

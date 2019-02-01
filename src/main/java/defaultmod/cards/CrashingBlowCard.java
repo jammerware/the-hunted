@@ -25,7 +25,7 @@ public class CrashingBlowCard extends AbstractWardenGroundCard {
 
     private static final int COST = 1;
     private static final int BASE_DAMAGE = 9;
-    private static final int UPGRADE_DAMAGE = 12;
+    private static final int UPGRADE_DAMAGE = 3;
     private static final int BASE_VULN = 1;
     private static final int UPGRADE_VULN = 1;
     private static final int BASE_GROUND_LOSE = 2;

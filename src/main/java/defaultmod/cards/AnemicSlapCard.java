@@ -36,6 +36,7 @@ public class AnemicSlapCard extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = damage = BASE_DAMAGE;
+        this.tags.add(AbstractCardEnum.SELF_DEBUFF);
     }
 
     @Override

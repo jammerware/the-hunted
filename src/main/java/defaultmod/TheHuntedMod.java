@@ -85,10 +85,25 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         logger.info("Done subscribing");
         logger.info("Creating the color " + AbstractCardEnum.HUNTED_ORANGE.toString());
 
-        BaseMod.addColor(AbstractCardEnum.HUNTED_ORANGE, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY,
-                ENERGY_ORB_DEFAULT_GRAY, ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT,
-                POWER_DEFAULT_GRAY_PORTRAIT, ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addColor(
+            AbstractCardEnum.HUNTED_ORANGE, 
+            DEFAULT_GRAY, 
+            DEFAULT_GRAY, 
+            DEFAULT_GRAY, 
+            DEFAULT_GRAY,
+            DEFAULT_GRAY, 
+            DEFAULT_GRAY, 
+            DEFAULT_GRAY, 
+            ATTACK_DEFAULT_GRAY, 
+            SKILL_DEFAULT_GRAY, 
+            POWER_DEFAULT_GRAY,
+            ENERGY_ORB_DEFAULT_GRAY, 
+            ATTACK_DEFAULT_GRAY_PORTRAIT, 
+            SKILL_DEFAULT_GRAY_PORTRAIT,
+            POWER_DEFAULT_GRAY_PORTRAIT, 
+            ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, 
+            CARD_ENERGY_ORB
+        );
 
         logger.info("Done creating the color");
     }
@@ -150,6 +165,7 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         BaseMod.addCard(new AnemicSlapCard());
         BaseMod.addCard(new AQuietMomentCard());
         BaseMod.addCard(new CrashingBlowCard());
+        BaseMod.addCard(new EntropyProjectorCard());
         BaseMod.addCard(new EvadeCard());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new RansackCard());
@@ -161,11 +177,12 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         logger.info("Making sure the cards are unlocked.");
         UnlockTracker.unlockCard(AnemicSlapCard.ID);
         UnlockTracker.unlockCard(AQuietMomentCard.ID);
-        UnlockTracker.unlockCard(ScrambleCard.ID);
         UnlockTracker.unlockCard(CrashingBlowCard.ID);
         UnlockTracker.unlockCard(Defend.ID);
+        UnlockTracker.unlockCard(EntropyProjectorCard.ID);
         UnlockTracker.unlockCard(EvadeCard.ID);
         UnlockTracker.unlockCard(RansackCard.ID);
+        UnlockTracker.unlockCard(ScrambleCard.ID);
         UnlockTracker.unlockCard(SeepThroughCard.ID);
         UnlockTracker.unlockCard(Strike.ID);
 
@@ -213,5 +230,4 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
     public static String makeID(String idText) {
         return "TheHunted:" + idText;
     }
-
 }

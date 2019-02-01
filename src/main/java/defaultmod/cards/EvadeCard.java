@@ -22,11 +22,10 @@ public class EvadeCard extends AbstractWardenGroundCard {
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
 
-    private static final int COST = 1;
-    private static final int BASE_BLOCK = 1;
-    private static final int UPGRADE_BLOCK = 2;
+    private static final int COST = 0;
+    private static final int BASE_BLOCK = 6;
+    private static final int UPGRADE_BLOCK = 9;
     private static final int BASE_WEAK = 1;
-    private static final int UPGRADE_WEAK = 1;
     private static final int WARDEN_LOSE_GROUND = -1;
 
     public static final AbstractCard.CardColor COLOR = AbstractCardEnum.HUNTED_ORANGE;
@@ -40,6 +39,7 @@ public class EvadeCard extends AbstractWardenGroundCard {
         baseBlock = block = BASE_BLOCK;
         baseMagicNumber = magicNumber = BASE_WEAK;
         baseWardenGainLoseAmount = wardenGainLoseAmount = WARDEN_LOSE_GROUND;
+        this.tags.add(AbstractCardEnum.SELF_DEBUFF);
     }
 
     @Override
@@ -47,9 +47,9 @@ public class EvadeCard extends AbstractWardenGroundCard {
         // apply block
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 
-        // apply weak
+        // apply weak to yourself
         AbstractDungeon.actionManager
-                .addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+                .addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false), this.magicNumber));
 
         // gain ground
         AbstractDungeon.actionManager.addToBottom(new GainLoseGroundAction(p, -1));
@@ -61,7 +61,6 @@ public class EvadeCard extends AbstractWardenGroundCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_BLOCK);
-            upgradeMagicNumber(UPGRADE_WEAK);
             initializeDescription();
         }
     }

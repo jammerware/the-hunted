@@ -47,8 +47,8 @@ public class TheDefault extends CustomPlayer {
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 10;
-    public static final int ORB_SLOTS = 3;
+    public static final int CARD_DRAW = 5;
+    public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
 
@@ -114,8 +114,19 @@ public class TheDefault extends CustomPlayer {
     // Starting description and loadout
     @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo(NAMES[0], TEXT[0], STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this,
-                getStartingRelics(), getStartingDeck(), false);
+        return new CharSelectInfo(
+            NAMES[0], 
+            TEXT[0], 
+            STARTING_HP, 
+            MAX_HP, 
+            ORB_SLOTS, 
+            STARTING_GOLD, 
+            CARD_DRAW, 
+            this,
+            getStartingRelics(), 
+            getStartingDeck(), 
+            false
+        );
     }
 
     // Starting Deck

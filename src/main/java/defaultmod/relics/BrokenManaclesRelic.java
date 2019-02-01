@@ -22,7 +22,7 @@ public class BrokenManaclesRelic extends CustomRelic {
 
     public BrokenManaclesRelic() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), AbstractRelic.RelicTier.STARTER,
-                AbstractRelic.LandingSound.MAGICAL);
+                AbstractRelic.LandingSound.CLINK);
     }
 
     @Override
