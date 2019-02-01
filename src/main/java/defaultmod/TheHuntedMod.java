@@ -167,6 +167,7 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         BaseMod.addCard(new CrashingBlowCard());
         BaseMod.addCard(new EntropyProjectorCard());
         BaseMod.addCard(new EvadeCard());
+        BaseMod.addCard(new HyperpropellantCard());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new RansackCard());
         BaseMod.addCard(new ScrambleCard());
@@ -181,6 +182,7 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(EntropyProjectorCard.ID);
         UnlockTracker.unlockCard(EvadeCard.ID);
+        UnlockTracker.unlockCard(HyperpropellantCard.ID);
         UnlockTracker.unlockCard(RansackCard.ID);
         UnlockTracker.unlockCard(ScrambleCard.ID);
         UnlockTracker.unlockCard(SeepThroughCard.ID);

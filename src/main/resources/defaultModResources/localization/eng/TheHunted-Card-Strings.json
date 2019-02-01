@@ -23,6 +23,11 @@
     "NAME": "Evade",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to yourself. NL Gain !TheHunted:WardenGainLoseAmountVariable! ground."
   },
+  "TheHunted:Hyperpropellant": {
+    "NAME": "Hyperpropellant",
+    "DESCRIPTION": "Gain X ground. NL Gain !B! Block X times.",
+    "UPGRADE_DESCRIPTION": "Gain X ground. NL Gain !B! + !M! Block X times."
+  },
   "TheHunted:Perseverance": {
     "NAME": "Perseverance",
     "DESCRIPTION": "Gain ground whenever you shuffle your draw pile."
