@@ -1,4 +1,11 @@
 {
+        "TheHunted:BarTheDoorPower": {
+                "NAME": "Bar the Door",
+                "FLAVOR": "BACK, FIEND!",
+                "DESCRIPTIONS": [
+                        "You'll heal for 10 if the Warden is very far behind you at the end of combat."
+                ]
+        },
         "TheHunted:EerieGlowPower": {
                 "NAME": "Eerie Glow",
                 "FLAVOR": "You pulse intermittently, like a cheap neon sign in a red light district.",

@@ -7,6 +7,10 @@
     "NAME": "Anemic Slap",
     "DESCRIPTION": "Deal !D! damage. NL Apply Weak to yourself."
   },
+  "TheHunted:BarTheDoorCard": {
+    "NAME": "Bar the Door",
+    "DESCRIPTION": "At the end of combat, if the Warden is very far away from you, heal !M!."
+  },
   "TheHunted:CrashingBlow": {
     "NAME": "Crashing Blow",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
@@ -28,6 +32,10 @@
     "DESCRIPTION": "Gain X ground. NL Gain !B! Block X times.",
     "UPGRADE_DESCRIPTION": "Gain X ground. NL Gain !B! + !M! Block X times."
   },
+  "TheHunted:OffensiveReboundCard": {
+    "NAME": "Offensive Rebound",
+    "DESCRIPTION": "Deal !D! damage and apply weak. If this attack is unblocked, return it to your hand."
+  },
   "TheHunted:Perseverance": {
     "NAME": "Perseverance",
     "DESCRIPTION": "Gain ground whenever you shuffle your draw pile."
@@ -43,6 +51,11 @@
   "TheHunted:SeepThrough": {
     "NAME": "Seep Through",
     "DESCRIPTION": "Deal !D! damage. NL Ignores armor."
+  },
+  "TheHunted:SharpTurn": {
+    "NAME": "Sharp Turn",
+    "DESCRIPTION": "Put a card from your hand on top of your draw pile. NL Put a card from your discard pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Draw a card. NL Put a card from your hand on top of your draw pile. NL Put a card from your discard pile into your hand."
   },
   "TheHunted:Strike": {
     "NAME": "Strike",
