@@ -34,26 +34,27 @@ public class GainLoseGroundAction extends AbstractGameAction {
         }
 
         if (wardenGainsGround > 0) {
-            logger.info("The Warden gains ground..." + wardenGainsGround);
+            logger.debug("The Warden gains ground - " + wardenGainsGround);
 
             if (wardenPower.amount + wardenGainsGround <= MAX_STACKS) {
-                logger.info("the warden can get closer without catching the player");
+                logger.debug("the warden can get closer without catching the player");
 
                 AbstractDungeon.actionManager
                         .addToBottom(new ApplyPowerAction(player, player, new WardenPower(player), wardenGainsGround));
             } else {
+                wardenPower.playApplyPowerSfx();
                 AbstractDungeon.actionManager.addToBottom(new PlayerCaughtAction(player));
             }
         } else if (wardenGainsGround < 0) {
-            logger.info("The Warden loses ground..." + wardenGainsGround);
+            logger.debug("The Warden loses ground - " + wardenGainsGround);
 
             if (wardenPower.amount + wardenGainsGround >= MIN_STACKS) {
-                logger.info("the warden can move further away without going below 1 stack");
+                logger.debug("the warden can move further away without going below 1 stack");
 
                 AbstractDungeon.actionManager
                         .addToBottom(new ReducePowerAction(player, player, wardenPower, -wardenGainsGround));
             } else {
-                logger.info("The Warden backs off as far as she can.");
+                logger.debug("The Warden backs off as far as she can.");
 
                 AbstractDungeon.actionManager.addToBottom(
                         new ReducePowerAction(player, player, wardenPower, wardenPower.amount - MIN_STACKS));

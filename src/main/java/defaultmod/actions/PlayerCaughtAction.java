@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.EnemyTurnEffect;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +23,7 @@ public class PlayerCaughtAction extends AbstractGameAction {
     private static final int CAUGHT_FRAIL = 2;
     private static final int CAUGHT_VULNERABLE = 2;
     private static final int CAUGHT_WEAK = 2;
-    private static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
+    private static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getSimpleName());
 
     public PlayerCaughtAction(final AbstractCreature player) {
         this.player = player;

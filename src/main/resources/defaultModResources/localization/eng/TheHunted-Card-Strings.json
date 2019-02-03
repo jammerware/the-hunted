@@ -9,7 +9,7 @@
   },
   "TheHunted:BarTheDoorCard": {
     "NAME": "Bar the Door",
-    "DESCRIPTION": "At the end of combat, if the Warden is very far away from you, heal !M!."
+    "DESCRIPTION": "At the end of combat, if the Warden is very far away from you, heal !M!. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
   },
   "TheHunted:CrashingBlow": {
     "NAME": "Crashing Blow",
@@ -55,7 +55,7 @@
   "TheHunted:SharpTurn": {
     "NAME": "Sharp Turn",
     "DESCRIPTION": "Put a card from your hand on top of your draw pile. NL Put a card from your discard pile into your hand.",
-    "UPGRADE_DESCRIPTION": "Draw a card. NL Put a card from your hand on top of your draw pile. NL Put a card from your discard pile into your hand."
+    "UPGRADE_DESCRIPTION": "[#7fff00]Draw a card.[] NL Put a card from your hand on top of your draw pile. NL Put a card from your discard pile into your hand."
   },
   "TheHunted:Strike": {
     "NAME": "Strike",

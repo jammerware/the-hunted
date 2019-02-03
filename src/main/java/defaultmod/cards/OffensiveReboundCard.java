@@ -4,16 +4,22 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+
+import org.apache.logging.log4j.Logger;
+
 import defaultmod.TheHuntedMod;
 import defaultmod.actions.GainLoseGroundAction;
 import defaultmod.patches.AbstractCardEnum;
+import defaultmod.services.LoggerService;
 
 public class OffensiveReboundCard extends AbstractWardenGroundCard {
     public static final String ID = TheHuntedMod.makeID(OffensiveReboundCard.class.getSimpleName());
@@ -34,6 +40,8 @@ public class OffensiveReboundCard extends AbstractWardenGroundCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG = "defaultModResources/images/cards/Attack.png";
 
+    private boolean isRebounding = false;
+
     public OffensiveReboundCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
@@ -44,10 +52,10 @@ public class OffensiveReboundCard extends AbstractWardenGroundCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // check block state of the enemy
-        boolean isBlockedAttack = false;
+        // check block state of the enemy, set the card to rebound if unblocked
+        // PROBABLY going to later implement a bypass block debuff, so we might have to check that here
         if (monster.currentBlock > 0) {
-            isBlockedAttack = true;
+            this.isRebounding = true;
         }
         
         // deal damage
@@ -69,9 +77,30 @@ public class OffensiveReboundCard extends AbstractWardenGroundCard {
                     this.magicNumber
                 )
             );
-            
+
         // lose ground
         AbstractDungeon.actionManager.addToBottom(new GainLoseGroundAction(player, this.wardenGainLoseAmount));
+
+        // rebound if the attack wasn't blocked
+        this.isRebounding = true;
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        Logger logger = LoggerService.getLogger(OffensiveReboundCard.class);
+        logger.info("moving to discard");
+        super.onMoveToDiscard();
+        logger.info("supered");
+
+        if (this.isRebounding) {
+            logger.info("REBOUND");
+            CardGroup group = new CardGroup(CardGroupType.DISCARD_PILE);
+            logger.info("got the discard pile");
+            logger.info("get the top card");
+            logger.info(group.size());
+            AbstractDungeon.player.hand.addToHand(this);
+            logger.info("add to hand");
+        }
     }
 
     @Override

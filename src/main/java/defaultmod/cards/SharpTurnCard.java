@@ -58,9 +58,11 @@ public class SharpTurnCard extends CustomCard {
             .addToBottom(new PutOnDeckAction(player, player, 1, false));
         
         // Put a card from your discard pile into your hand
-        AbstractDungeon
-            .actionManager
-            .addToBottom(new DiscardPileToHandAction(1));
+        if (!AbstractDungeon.player.discardPile.isEmpty()) {
+            AbstractDungeon
+                .actionManager
+                .addToBottom(new DiscardPileToHandAction(1));
+        }
     }
 
     @Override
