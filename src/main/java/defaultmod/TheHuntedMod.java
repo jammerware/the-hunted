@@ -176,6 +176,7 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         BaseMod.addCard(new SeepThroughCard());
         BaseMod.addCard(new SharpTurnCard());
         BaseMod.addCard(new Strike());
+        BaseMod.addCard(new VolatileGrenadeCard());
 
         // Unlock the cards
         logger.info("Making sure the cards are unlocked.");
@@ -193,6 +194,7 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
         UnlockTracker.unlockCard(SeepThroughCard.ID);
         UnlockTracker.unlockCard(SharpTurnCard.ID);
         UnlockTracker.unlockCard(Strike.ID);
+        UnlockTracker.unlockCard(VolatileGrenadeCard.ID);
 
         logger.info("Done adding cards!");
     }

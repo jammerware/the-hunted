@@ -64,5 +64,9 @@
   "TheHunted:Taunt": {
     "NAME": "Taunt",
     "DESCRIPTION": "Gain !B! Block. NL Lose !TheHunted:WardenGainLoseAmountVariable!ground."
+  },
+  "TheHunted:VolatileGrenadeCard": {
+    "NAME": "Volatile Grenade",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! vulnerable to yourself."
   }
 }
