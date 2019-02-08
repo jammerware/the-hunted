@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import basemod.abstracts.CustomCard;
 import defaultmod.TheHuntedMod;
 import defaultmod.patches.AbstractCardEnum;
+import defaultmod.powers.RecklessWeaknessPower;
 
 public class AnemicSlapCard extends CustomCard {
     public static final String ID = TheHuntedMod.makeID("AnemicSlap");
@@ -46,10 +46,16 @@ public class AnemicSlapCard extends CustomCard {
             .actionManager
             .addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn)));
         
-        // apply weak to yourself
+        // apply weak to yourself at start of next turn
         AbstractDungeon
             .actionManager
-            .addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, 1, false)));
+            .addToBottom(
+                new ApplyPowerAction(
+                    player,
+                    player,
+                    new RecklessWeaknessPower(player, this.magicNumber)
+                )
+            );
     }
 
     @Override

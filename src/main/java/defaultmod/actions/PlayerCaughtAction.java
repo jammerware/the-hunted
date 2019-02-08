@@ -2,7 +2,7 @@ package defaultmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.EndTurnAction;
+import com.megacrit.cardcrawl.actions.common.MonsterStartTurnAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -56,7 +56,7 @@ public class PlayerCaughtAction extends AbstractGameAction {
         // end the turn
         AbstractDungeon
             .actionManager
-            .addToBottom(new EndTurnAction());
+            .addToBottom(new MonsterStartTurnAction());
 
         this.isDone = true;
     }

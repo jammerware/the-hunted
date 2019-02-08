@@ -5,7 +5,7 @@
   },
   "TheHunted:AnemicSlap": {
     "NAME": "Anemic Slap",
-    "DESCRIPTION": "Deal !D! damage. NL Apply Weak to yourself."
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, apply Weak to yourself."
   },
   "TheHunted:BarTheDoorCard": {
     "NAME": "Bar the Door",
@@ -25,7 +25,7 @@
   },
   "TheHunted:Evade": {
     "NAME": "Evade",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to yourself. NL Gain !TheHunted:WardenGainLoseAmountVariable! ground."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !TheHunted:WardenGainLoseAmountVariable! ground. NL NL Next turn, apply !M! Weak to yourself."
   },
   "TheHunted:Hyperpropellant": {
     "NAME": "Hyperpropellant",

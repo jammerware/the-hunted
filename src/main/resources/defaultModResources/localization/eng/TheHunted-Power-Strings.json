@@ -24,7 +24,15 @@
                 "NAME": "Perseverance",
                 "FLAVOR": "You're showing neither pain nor fear.",
                 "DESCRIPTIONS": [
-                        "When you shuffle your deck, acquire ground."
+                        "When you shuffle your deck, gain ground."
+                ]
+        },
+        "TheHunted:RecklessWeaknessPower": {
+                "NAME": "Reckless Weakness",
+                "FLAVOR": "Whoops.",
+                "DESCRIPTIONS": [
+                        "At the start of your next turn, you'll apply ",
+                        " weakness to yourself."
                 ]
         },
         "TheHunted:WardenPower": {

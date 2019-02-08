@@ -8,11 +8,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import defaultmod.TheHuntedMod;
 import defaultmod.actions.GainLoseGroundAction;
 import defaultmod.patches.AbstractCardEnum;
+import defaultmod.powers.RecklessWeaknessPower;
 
 public class EvadeCard extends AbstractWardenGroundCard {
     public static final String ID = TheHuntedMod.makeID("Evade");
@@ -43,16 +43,23 @@ public class EvadeCard extends AbstractWardenGroundCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void use(AbstractPlayer player, AbstractMonster m) {
         // apply block
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-
-        // apply weak to yourself
-        AbstractDungeon.actionManager
-                .addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
 
         // gain ground
-        AbstractDungeon.actionManager.addToBottom(new GainLoseGroundAction(p, -1));
+        AbstractDungeon.actionManager.addToBottom(new GainLoseGroundAction(player, -1));
+
+        // apply weak to yourself at start of next turn
+        AbstractDungeon
+            .actionManager
+            .addToBottom(
+                new ApplyPowerAction(
+                    player,
+                    player,
+                    new RecklessWeaknessPower(player, this.magicNumber)
+                )
+            );
     }
 
     // Upgraded stats.
