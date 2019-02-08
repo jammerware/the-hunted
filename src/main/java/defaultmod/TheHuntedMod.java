@@ -8,11 +8,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import org.apache.logging.log4j.LogManager;
@@ -21,22 +24,25 @@ import org.apache.logging.log4j.Logger;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
 import defaultmod.cards.*;
 import defaultmod.characters.TheDefault;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.patches.TheHuntedEnum;
 import defaultmod.relics.*;
+import defaultmod.services.PowerWatcherService;
 import defaultmod.variables.WardenGainLoseAmount;
 
 @SpireInitializer
-public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber,
-        EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
+public class TheHuntedMod implements 
+    EditCardsSubscriber, 
+    EditRelicsSubscriber, 
+    EditStringsSubscriber,
+    EditKeywordsSubscriber, 
+    EditCharactersSubscriber,
+    PostBattleSubscriber,
+    PostInitializeSubscriber,
+    PostPowerApplySubscriber {
 
     public static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
 
@@ -144,12 +150,26 @@ public class TheHuntedMod implements EditCardsSubscriber, EditRelicsSubscriber, 
     }
 
     @Override
+    public void receivePostBattle(AbstractRoom room) {
+        PowerWatcherService.endCurrentBattle();
+    }
+
+    @Override
+    public void receivePostPowerApplySubscriber(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        logger.info("---POST POWER APPLY---");
+        logger.info("Power is " + power.name);
+        logger.info("Probably source is " + source.name);
+        logger.info("Probably target is " + target.name);
+        // note that i'm not actually sure which argument is source and which one is target on the incoming hook, i just guessed
+        // because it currently doesn't matter
+        PowerWatcherService.powerApplied(source, target, power);
+    }
+
+    @Override
     public void receiveEditRelics() {
-        logger.info("Adding relics");
-
+        logger.debug("Adding relics");
         BaseMod.addRelicToCustomPool(new BrokenManaclesRelic(), AbstractCardEnum.HUNTED_ORANGE);
-
-        logger.info("Done adding relics!");
+        logger.debug("Done adding relics!");
     }
 
     @Override
