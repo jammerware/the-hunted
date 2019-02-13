@@ -27,6 +27,22 @@
                         "When you shuffle your deck, gain ground."
                 ]
         },
+        "TheHunted:RecklessFrailtyPower": {
+                "NAME": "Reckless Frailty",
+                "FLAVOR": "Whoops.",
+                "DESCRIPTIONS": [
+                        "At the start of your next turn, you'll apply ",
+                        " frail to yourself."
+                ]
+        },
+        "TheHunted:RecklessVulnerabilityPower": {
+                "NAME": "Reckless Vulnerability",
+                "FLAVOR": "Whoops.",
+                "DESCRIPTIONS": [
+                        "At the start of your next turn, you'll apply ",
+                        " vulnerability to yourself."
+                ]
+        },
         "TheHunted:RecklessWeaknessPower": {
                 "NAME": "Reckless Weakness",
                 "FLAVOR": "Whoops.",

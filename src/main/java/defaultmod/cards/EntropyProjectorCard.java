@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import defaultmod.TheHuntedMod;
 import defaultmod.patches.AbstractCardEnum;
+import defaultmod.services.PowerWatcherService;
 
 public class EntropyProjectorCard extends CustomCard {
     public static final String ID = TheHuntedMod.makeID("EntropyProjector");
@@ -35,13 +36,15 @@ public class EntropyProjectorCard extends CustomCard {
         baseBlock = block = BASE_BLOCK;
     }
 
+    // this still fucks up if you play a debuff on your turn obv
     @Override
-    public void triggerOnCardPlayed(AbstractCard cardPlayed) {
-        super.triggerOnCardPlayed(cardPlayed);
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
 
-        if (cardPlayed.hasTag(AbstractCardEnum.SELF_DEBUFF)) {
-            this.modifyCostForCombat(-1);
-        }
+        // let's say the starting cost is 5, the current cost is 4 (i.e. the player has played 1 debuff),
+        // and they play a second debuff
+        // (5 - 4) - 2 = -1
+        this.modifyCostForCombat(COST - this.cost - PowerWatcherService.getPlayerDebuffCount());
     }
 
     @Override

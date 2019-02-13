@@ -7,18 +7,21 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 
+import defaultmod.powers.RecklessFrailtyPower;
+import defaultmod.powers.RecklessVulnerabilityPower;
 import defaultmod.powers.RecklessWeaknessPower;
 import defaultmod.powers.WardenPower;
 
 public final class PowerWatcherService {
     private static int CURRENT_BATTLE_DEBUFF_COUNT = 0;
     private static List<String> POWER_BLACKLIST = Arrays.asList(new String[]{ 
+        RecklessFrailtyPower.POWER_ID,
+        RecklessVulnerabilityPower.POWER_ID,
         RecklessWeaknessPower.POWER_ID,
         WardenPower.POWER_ID 
     });
 
     public static void endCurrentBattle() {
-        LoggerService.getLogger(PowerWatcherService.class).debug("Battle ended, count reset");
         CURRENT_BATTLE_DEBUFF_COUNT = 0;
     }
 

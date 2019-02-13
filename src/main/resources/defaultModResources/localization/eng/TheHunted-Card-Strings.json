@@ -11,6 +11,15 @@
     "NAME": "Bar the Door",
     "DESCRIPTION": "At the end of combat, if the Warden is very far away from you, heal !M!. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."
   },
+  "TheHunted:Capitalize": {
+    "NAME": "Capitalize",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has a debuff, gain !M! energy and draw a card."
+  },
+  "TheHunted:Corrode": {
+    "NAME": "Corrode",
+    "DESCRIPTION": "Remove half of the enemy's Block (rounded down). NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Remove ALL of the enemy's Block. NL Deal !D! damage."
+  },
   "TheHunted:CrashingBlow": {
     "NAME": "Crashing Blow",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Lose !TheHunted:WardenGainLoseAmountVariable! ground."

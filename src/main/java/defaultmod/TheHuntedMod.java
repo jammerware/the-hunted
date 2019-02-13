@@ -157,11 +157,6 @@ public class TheHuntedMod implements
     @Override
     public void receivePostPowerApplySubscriber(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         logger.info("---POST POWER APPLY---");
-        logger.info("Power is " + power.name);
-        logger.info("Probably source is " + source.name);
-        logger.info("Probably target is " + target.name);
-        // note that i'm not actually sure which argument is source and which one is target on the incoming hook, i just guessed
-        // because it currently doesn't matter
         PowerWatcherService.powerApplied(source, target, power);
     }
 
@@ -185,6 +180,8 @@ public class TheHuntedMod implements
         BaseMod.addCard(new AnemicSlapCard());
         BaseMod.addCard(new AQuietMomentCard());
         BaseMod.addCard(new BarTheDoorCard());
+        BaseMod.addCard(new CapitalizeCard());
+        BaseMod.addCard(new CorrodeCard());
         BaseMod.addCard(new CrashingBlowCard());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new EntropyProjectorCard());
@@ -203,6 +200,8 @@ public class TheHuntedMod implements
         UnlockTracker.unlockCard(AnemicSlapCard.ID);
         UnlockTracker.unlockCard(AQuietMomentCard.ID);
         UnlockTracker.unlockCard(BarTheDoorCard.ID);
+        UnlockTracker.unlockCard(CapitalizeCard.ID);
+        UnlockTracker.unlockCard(CorrodeCard.ID);
         UnlockTracker.unlockCard(CrashingBlowCard.ID);
         UnlockTracker.unlockCard(Defend.ID);
         UnlockTracker.unlockCard(EntropyProjectorCard.ID);

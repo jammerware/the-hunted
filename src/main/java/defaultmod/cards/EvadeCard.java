@@ -39,7 +39,6 @@ public class EvadeCard extends AbstractWardenGroundCard {
         baseBlock = block = BASE_BLOCK;
         baseMagicNumber = magicNumber = BASE_WEAK;
         baseWardenGainLoseAmount = wardenGainLoseAmount = WARDEN_LOSE_GROUND;
-        this.tags.add(AbstractCardEnum.SELF_DEBUFF);
     }
 
     @Override

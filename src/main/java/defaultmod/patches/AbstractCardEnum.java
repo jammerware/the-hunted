@@ -7,9 +7,4 @@ public class AbstractCardEnum {
     // color stuff
     @SpireEnum
     public static AbstractCard.CardColor HUNTED_ORANGE;
-
-    // custom tags
-    @SpireEnum
-    public static AbstractCard.CardTags SELF_DEBUFF;
-
 }

@@ -46,8 +46,6 @@ public class VolatileGrenadeCard extends CustomCard {
         this.baseDamage = this.damage = DAMAGE;
         this.baseMagicNumber = this.magicNumber = BASE_VULN;
         this.isMultiDamage = true;
-
-        this.tags.add(AbstractCardEnum.SELF_DEBUFF);
     }
 
     @Override
