@@ -30,7 +30,7 @@ public final class PowerWatcherService {
     }
 
     public static void powerApplied(AbstractCreature source, AbstractCreature target, AbstractPower power) {
-        if (source.isPlayer && target.isPlayer && power.type == PowerType.DEBUFF && !POWER_BLACKLIST.contains(power.ID)) {
+        if (source != null && source.isPlayer && target.isPlayer && power.type == PowerType.DEBUFF && !POWER_BLACKLIST.contains(power.ID)) {
             CURRENT_BATTLE_DEBUFF_COUNT++;
             LoggerService.getLogger(PowerWatcherService.class).debug("---POWER WATCHER---");
             LoggerService.getLogger(PowerWatcherService.class).debug("player debuffed themselves " + power.ID);

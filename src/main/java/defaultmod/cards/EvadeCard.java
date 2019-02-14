@@ -24,7 +24,7 @@ public class EvadeCard extends AbstractWardenGroundCard {
 
     private static final int COST = 0;
     private static final int BASE_BLOCK = 6;
-    private static final int UPGRADE_BLOCK = 9;
+    private static final int UPGRADE_BLOCK = 3;
     private static final int BASE_WEAK = 1;
     private static final int WARDEN_LOSE_GROUND = -1;
 

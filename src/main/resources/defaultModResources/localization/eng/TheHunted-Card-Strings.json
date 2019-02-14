@@ -84,6 +84,6 @@
   },
   "TheHunted:VolatileGrenadeCard": {
     "NAME": "Volatile Grenade",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! vulnerable to yourself."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Apply !M! vulnerable to yourself."
   }
 }

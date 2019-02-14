@@ -60,7 +60,7 @@ public class VolatileGrenadeCard extends CustomCard {
         // apply self vuln
         AbstractDungeon
             .actionManager
-            .addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, false)));
+            .addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, false), 1));
     }
 
     // Upgraded stats.

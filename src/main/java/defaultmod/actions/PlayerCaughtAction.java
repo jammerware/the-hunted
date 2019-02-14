@@ -55,13 +55,13 @@ public class PlayerCaughtAction extends AbstractGameAction {
 
         // apply debuffs - vuln, weak, frail
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(player, player, new VulnerablePower(player, CAUGHT_VULNERABLE, false)));
+                new ApplyPowerAction(player, player, new VulnerablePower(player, CAUGHT_VULNERABLE, false), 1));
 
         AbstractDungeon.actionManager
-                .addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, CAUGHT_WEAK, false)));
+                .addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, CAUGHT_WEAK, false), 1));
 
         AbstractDungeon.actionManager
-                .addToBottom(new ApplyPowerAction(player, player, new FrailPower(player, CAUGHT_FRAIL, false)));
+                .addToBottom(new ApplyPowerAction(player, player, new FrailPower(player, CAUGHT_FRAIL, false), 1));
 
         
         // reset the warden's position

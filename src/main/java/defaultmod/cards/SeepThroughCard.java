@@ -1,5 +1,6 @@
 package defaultmod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -42,7 +43,7 @@ public class SeepThroughCard extends CustomCard {
         // deal damage
         AbstractDungeon
             .actionManager
-            .addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageType.HP_LOSS)));
+            .addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageType.HP_LOSS), AttackEffect.SLASH_VERTICAL));
     }
 
     @Override

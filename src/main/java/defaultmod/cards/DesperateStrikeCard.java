@@ -1,5 +1,6 @@
 package defaultmod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -48,7 +49,7 @@ public class DesperateStrikeCard extends CustomCard {
             // do it again!
             AbstractDungeon
                 .actionManager
-                .addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn)));
+                .addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AttackEffect.SLASH_HORIZONTAL));
         }
     }
 
