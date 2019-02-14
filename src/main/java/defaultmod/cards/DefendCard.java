@@ -1,51 +1,46 @@
 package defaultmod.cards;
 
 import basemod.helpers.BaseModCardTags;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import basemod.abstracts.CustomCard;
 
 import defaultmod.TheHuntedMod;
 import defaultmod.patches.AbstractCardEnum;
 
-public class Strike extends CustomCard {
-    public static final String ID = TheHuntedMod.makeID("Strike");
+// Gain 5(8) Block.
+public class DefendCard extends CustomCard {
+    public static final String ID = TheHuntedMod.makeID("Defend");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "defaultModResources/images/cards/Attack.png";
+    public static final String IMG = "defaultModResources/images/cards/Skill.png";
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = AbstractCardEnum.HUNTED_ORANGE;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int BLOCK = 5;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
 
-    public Strike() {
+    public DefendCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = DAMAGE;
+        baseBlock = BLOCK;
 
-        this.tags.add(BaseModCardTags.BASIC_STRIKE);
-        this.tags.add(CardTags.STRIKE);
+        this.tags.add(BaseModCardTags.BASIC_DEFEND);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // BONK!
-        DamageAction action = new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-
-        AbstractDungeon.actionManager.addToBottom(action);
+        AbstractDungeon.actionManager
+                .addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
     }
 
     // Upgraded stats.
@@ -53,7 +48,7 @@ public class Strike extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

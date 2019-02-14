@@ -32,9 +32,9 @@ import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import defaultmod.TheHuntedMod;
 import defaultmod.cards.CrashingBlowCard;
-import defaultmod.cards.Defend;
+import defaultmod.cards.DefendCard;
 import defaultmod.cards.EvadeCard;
-import defaultmod.cards.Strike;
+import defaultmod.cards.StrikeCard;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.relics.BrokenManaclesRelic;
 
@@ -134,15 +134,15 @@ public class TheDefault extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
+        retVal.add(StrikeCard.ID);
+        retVal.add(StrikeCard.ID);
+        retVal.add(StrikeCard.ID);
+        retVal.add(StrikeCard.ID);
 
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
+        retVal.add(DefendCard.ID);
+        retVal.add(DefendCard.ID);
+        retVal.add(DefendCard.ID);
+        retVal.add(DefendCard.ID);
 
         retVal.add(CrashingBlowCard.ID);
         retVal.add(EvadeCard.ID);
@@ -210,7 +210,7 @@ public class TheDefault extends CustomPlayer {
     // Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new StrikeCard();
     }
 
     // The class name as it appears next to your player name in-game

@@ -6,7 +6,8 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "mvn package"
+            "command": "mvn package",
+            "problemMatcher": []
         },
         {
             "label": "run debug client",

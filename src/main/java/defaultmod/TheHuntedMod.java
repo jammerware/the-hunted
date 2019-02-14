@@ -182,7 +182,7 @@ public class TheHuntedMod implements
         BaseMod.addCard(new CapitalizeCard());
         BaseMod.addCard(new CorrodeCard());
         BaseMod.addCard(new CrashingBlowCard());
-        BaseMod.addCard(new Defend());
+        BaseMod.addCard(new DefendCard());
         BaseMod.addCard(new DesperateStrikeCard());
         BaseMod.addCard(new EntropyProjectorCard());
         BaseMod.addCard(new EvadeCard());
@@ -193,7 +193,7 @@ public class TheHuntedMod implements
         BaseMod.addCard(new ScrambleCard());
         BaseMod.addCard(new SeepThroughCard());
         BaseMod.addCard(new SharpTurnCard());
-        BaseMod.addCard(new Strike());
+        BaseMod.addCard(new StrikeCard());
         BaseMod.addCard(new VolatileGrenadeCard());
 
         // Unlock the cards
@@ -204,7 +204,7 @@ public class TheHuntedMod implements
         UnlockTracker.unlockCard(CapitalizeCard.ID);
         UnlockTracker.unlockCard(CorrodeCard.ID);
         UnlockTracker.unlockCard(CrashingBlowCard.ID);
-        UnlockTracker.unlockCard(Defend.ID);
+        UnlockTracker.unlockCard(DefendCard.ID);
         UnlockTracker.unlockCard(DesperateStrikeCard.ID);
         UnlockTracker.unlockCard(EntropyProjectorCard.ID);
         UnlockTracker.unlockCard(EvadeCard.ID);
@@ -215,7 +215,7 @@ public class TheHuntedMod implements
         UnlockTracker.unlockCard(ScrambleCard.ID);
         UnlockTracker.unlockCard(SeepThroughCard.ID);
         UnlockTracker.unlockCard(SharpTurnCard.ID);
-        UnlockTracker.unlockCard(Strike.ID);
+        UnlockTracker.unlockCard(StrikeCard.ID);
         UnlockTracker.unlockCard(VolatileGrenadeCard.ID);
 
         logger.info("Done adding cards!");
