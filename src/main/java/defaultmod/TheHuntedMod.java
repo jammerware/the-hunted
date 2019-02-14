@@ -125,7 +125,7 @@ public class TheHuntedMod implements
     public void receiveEditCharacters() {
         logger.info("Beginning to edit characters. " + "Add " + TheHuntedEnum.THE_HUNTED.toString());
 
-        BaseMod.addCharacter(new TheHuntedCharacter("the Default", TheHuntedEnum.THE_HUNTED), THE_DEFAULT_BUTTON,
+        BaseMod.addCharacter(new TheHuntedCharacter(makeID("TheHuntedCharacter"), TheHuntedEnum.THE_HUNTED), THE_DEFAULT_BUTTON,
                 THE_DEFAULT_PORTRAIT, TheHuntedEnum.THE_HUNTED);
 
         logger.info("Added " + TheHuntedEnum.THE_HUNTED.toString());

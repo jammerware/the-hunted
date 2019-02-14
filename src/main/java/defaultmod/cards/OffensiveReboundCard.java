@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import org.apache.logging.log4j.Logger;
 
 import defaultmod.TheHuntedMod;
-import defaultmod.actions.GainLoseGroundAction;
+import defaultmod.actions.WardenGainLoseGroundAction;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.services.LoggerService;
 
@@ -79,7 +79,7 @@ public class OffensiveReboundCard extends AbstractWardenGroundCard {
             );
 
         // lose ground
-        AbstractDungeon.actionManager.addToBottom(new GainLoseGroundAction(player, this.wardenGainLoseAmount));
+        AbstractDungeon.actionManager.addToBottom(new WardenGainLoseGroundAction(player, this.wardenGainLoseAmount));
 
         // rebound if the attack wasn't blocked
         this.isRebounding = true;

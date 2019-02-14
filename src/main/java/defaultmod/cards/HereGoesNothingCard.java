@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import defaultmod.TheHuntedMod;
-import defaultmod.actions.GainLoseGroundAction;
+import defaultmod.actions.WardenGainLoseGroundAction;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.powers.HereGoesNothingPower;
 
@@ -52,7 +52,7 @@ public class HereGoesNothingCard extends AbstractWardenGroundCard {
         // gain ground
         AbstractDungeon
             .actionManager
-            .addToBottom(new GainLoseGroundAction(player, this.wardenGainLoseAmount));
+            .addToBottom(new WardenGainLoseGroundAction(player, this.wardenGainLoseAmount));
 
         // apply the fatal debuff
         AbstractDungeon
@@ -61,11 +61,21 @@ public class HereGoesNothingCard extends AbstractWardenGroundCard {
         
         // play and exhaust n cards from draw pile
         for (int i = 0; i < this.magicNumber; i++) {
-            // resolve target
-            AbstractMonster target = null;
             AbstractDungeon
                 .actionManager
-                .addToBottom(new PlayTopCardAction(target, true));
+                .addToBottom(
+                    new PlayTopCardAction(
+                        AbstractDungeon
+                            .getCurrRoom()
+                            .monsters
+                            .getRandomMonster(
+                                null, 
+                                true, 
+                                AbstractDungeon.cardRandomRng
+                            ),
+                        true
+                    )
+                );
         }
     }
 

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import defaultmod.TheHuntedMod;
-import defaultmod.actions.GainLoseGroundAction;
+import defaultmod.actions.WardenGainLoseGroundAction;
 import defaultmod.patches.AbstractCardEnum;
 
 public class CrashingBlowCard extends AbstractWardenGroundCard {
@@ -55,7 +55,7 @@ public class CrashingBlowCard extends AbstractWardenGroundCard {
                 new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
 
         // lose ground
-        AbstractDungeon.actionManager.addToBottom(new GainLoseGroundAction(p, this.wardenGainLoseAmount));
+        AbstractDungeon.actionManager.addToBottom(new WardenGainLoseGroundAction(p, this.wardenGainLoseAmount));
     }
 
     @Override

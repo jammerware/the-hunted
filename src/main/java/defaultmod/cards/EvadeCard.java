@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import defaultmod.TheHuntedMod;
-import defaultmod.actions.GainLoseGroundAction;
+import defaultmod.actions.WardenGainLoseGroundAction;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.powers.RecklessWeaknessPower;
 
@@ -47,7 +47,7 @@ public class EvadeCard extends AbstractWardenGroundCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
 
         // gain ground
-        AbstractDungeon.actionManager.addToBottom(new GainLoseGroundAction(player, -1));
+        AbstractDungeon.actionManager.addToBottom(new WardenGainLoseGroundAction(player, -1));
 
         // apply weak to yourself at start of next turn
         AbstractDungeon

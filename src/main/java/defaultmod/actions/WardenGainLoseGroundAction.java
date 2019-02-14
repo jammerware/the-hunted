@@ -12,14 +12,14 @@ import defaultmod.powers.WardenPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class GainLoseGroundAction extends AbstractGameAction {
+public class WardenGainLoseGroundAction extends AbstractGameAction {
     private AbstractCreature player;
     private int wardenGainsGround;
     private static final int MIN_STACKS = 1;
     private static final int MAX_STACKS = 5;
     private static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
 
-    public GainLoseGroundAction(final AbstractCreature player, final int wardenGainsGround) {
+    public WardenGainLoseGroundAction(final AbstractCreature player, final int wardenGainsGround) {
         this.wardenGainsGround = wardenGainsGround;
         this.player = player;
     }

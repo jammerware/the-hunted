@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import defaultmod.TheHuntedMod;
-import defaultmod.actions.GainLoseGroundAction;
+import defaultmod.actions.WardenGainLoseGroundAction;
 import defaultmod.patches.AbstractCardEnum;
 
 /* 
@@ -56,7 +56,7 @@ public class AQuietMomentCard extends AbstractWardenGroundCard {
         // lose ground
         AbstractDungeon
             .actionManager
-            .addToBottom(new GainLoseGroundAction(player, wardenGainLoseAmount));
+            .addToBottom(new WardenGainLoseGroundAction(player, wardenGainLoseAmount));
     }
 
     @Override

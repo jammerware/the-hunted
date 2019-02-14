@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import defaultmod.TheHuntedMod;
-import defaultmod.actions.GainLoseGroundAction;
+import defaultmod.actions.WardenGainLoseGroundAction;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.powers.BarTheDoorPower;
 
@@ -57,7 +57,7 @@ public class BarTheDoorCard extends AbstractWardenGroundCard {
         // lose ground
         AbstractDungeon
             .actionManager
-            .addToBottom(new GainLoseGroundAction(player, this.wardenGainLoseAmount));
+            .addToBottom(new WardenGainLoseGroundAction(player, this.wardenGainLoseAmount));
     }
 
     @Override
