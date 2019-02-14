@@ -26,7 +26,7 @@ import basemod.ModLabel;
 import basemod.ModPanel;
 import basemod.interfaces.*;
 import defaultmod.cards.*;
-import defaultmod.characters.TheDefault;
+import defaultmod.characters.TheHuntedCharacter;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.patches.TheHuntedEnum;
 import defaultmod.relics.*;
@@ -125,7 +125,7 @@ public class TheHuntedMod implements
     public void receiveEditCharacters() {
         logger.info("Beginning to edit characters. " + "Add " + TheHuntedEnum.THE_HUNTED.toString());
 
-        BaseMod.addCharacter(new TheDefault("the Default", TheHuntedEnum.THE_HUNTED), THE_DEFAULT_BUTTON,
+        BaseMod.addCharacter(new TheHuntedCharacter("the Default", TheHuntedEnum.THE_HUNTED), THE_DEFAULT_BUTTON,
                 THE_DEFAULT_PORTRAIT, TheHuntedEnum.THE_HUNTED);
 
         logger.info("Added " + TheHuntedEnum.THE_HUNTED.toString());

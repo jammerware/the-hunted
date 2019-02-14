@@ -38,7 +38,7 @@ import defaultmod.cards.StrikeCard;
 import defaultmod.patches.AbstractCardEnum;
 import defaultmod.relics.BrokenManaclesRelic;
 
-public class TheDefault extends CustomPlayer {
+public class TheHuntedCharacter extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
 
     // =============== BASE STATS =================
@@ -54,7 +54,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== STRINGS =================
 
-    private static final String ID = makeID("DefaultCharacter");
+    private static final String ID = makeID("TheHuntedCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -79,7 +79,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public TheDefault(String name, PlayerClass setClass) {
+    public TheHuntedCharacter(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, "defaultModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
                         "defaultModResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
@@ -223,7 +223,7 @@ public class TheDefault extends CustomPlayer {
     // parameter.
     @Override
     public AbstractPlayer newInstance() {
-        return new TheDefault(name, chosenClass);
+        return new TheHuntedCharacter(name, chosenClass);
     }
 
     // Should return a Color object to be used to color the miniature card images in
