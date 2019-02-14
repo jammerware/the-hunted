@@ -1,0 +1,79 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "cardclass",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"card": {
+		"scope": "java",
+		"prefix": "cardclass",
+		"description": "Generate a class definition for a custom card.",
+		"body": [
+			"package defaultmod.cards;",
+			"",
+			"import com.megacrit.cardcrawl.actions.common.DamageAction;",
+			"import com.megacrit.cardcrawl.cards.AbstractCard;",
+			"import com.megacrit.cardcrawl.cards.DamageInfo;",
+			"import com.megacrit.cardcrawl.characters.AbstractPlayer;",
+			"import com.megacrit.cardcrawl.core.CardCrawlGame;",
+			"import com.megacrit.cardcrawl.dungeons.AbstractDungeon;",
+			"import com.megacrit.cardcrawl.localization.CardStrings;",
+			"import com.megacrit.cardcrawl.monsters.AbstractMonster;",
+			"",
+			"import basemod.abstracts.CustomCard;",
+			"import defaultmod.TheHuntedMod;",
+			"import defaultmod.patches.AbstractCardEnum;",
+			"",
+			"public class ${TM_FILENAME/(.*)\\..+$/$1/} extends CustomCard {",
+			"\tpublic static final String ID = TheHuntedMod.makeID(\"${TM_FILENAME/(.*)Card\\..+$/$1/}\");",
+			"",
+			"\tprivate static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);",
+			"\tprivate static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.${2|COMMON,UNCOMMON,RARE|};",
+			"\tprivate static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.${3|ALL,ALL_ENEMY,ENEMY,NONE,SELF,SELF_AND_ENEMY|};",
+			"\tprivate static final AbstractCard.CardType TYPE = AbstractCard.CardType.${4|ATTACK,SKILL,POWER|};",
+			"",
+			"\tprivate static final int COST = 0;",
+			"\tprivate static final int BASE_DAMAGE = 5;",
+			"\tprivate static final int UPGRADE_DAMAGE = 2;",
+			"",
+			"\tpublic static final AbstractCard.CardColor COLOR = AbstractCardEnum.HUNTED_ORANGE;",
+			"\tpublic static final String NAME = cardStrings.NAME;",
+			"\tpublic static final String DESCRIPTION = cardStrings.DESCRIPTION;",
+			"\tpublic static final String IMG = \"defaultModResources/images/cards/${4/(.*)/${1:/downcase}/g}.png\";",
+			"",
+			"\tpublic ${TM_FILENAME/(.*)\\..+$/$1/}() {",
+			"\t\tsuper(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);",
+			"",
+			"\t\tbaseDamage = damage = BASE_DAMAGE;",
+			"\t}",
+			"",
+			"\tpublic void use(AbstractPlayer player, AbstractMonster monster) {",
+			"\t\t$LINE_COMMENT deal the damage",
+			"\t\tAbstractDungeon",
+			"\t\t\t.actionManager",
+			"\t\t\t.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn)));",
+			"\t}",
+			"",
+			"\t@Override",
+			"\tpublic void upgrade() {",
+			"\t\tif (!upgraded) {",
+			"\t\t\tupgradeName();",
+			"\t\t\tupgradeDamage(UPGRADE_DAMAGE);",
+			"\t\t\tinitializeDescription();",
+			"\t\t}",
+			"\t}",
+			"}"
+		]
+	}
+}
