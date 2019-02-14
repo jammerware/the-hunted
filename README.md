@@ -12,4 +12,4 @@ mvn package
 
 Take the resulting `.jar` and put it in your `steamapps/common/SlayTheSpire/mods` folder (you may have to create the `mods` bit), and then run the game with mods enabled from Steam. Easy... peasy?
 
-If you encounter a bug or have a suggestion, just create a new [issue](https://github.com/jammerware/the-hunted/issues/new)on Github. Thanks for looking!
+If you encounter a bug or have a suggestion, just create a new [issue](https://github.com/jammerware/the-hunted/issues/new) on Github. Thanks for looking!
