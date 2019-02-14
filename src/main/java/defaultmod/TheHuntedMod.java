@@ -53,7 +53,7 @@ public class TheHuntedMod implements
 
     // Colors (RGB)
     // Character Color
-    public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+    public static final Color DEFAULT_GRAY = CardHelper.getColor(255f, 89f, 0f);
 
     // Card backgrounds - The actual rectangular card.
     private static final String ATTACK_DEFAULT_GRAY = "defaultModResources/images/512/bg_attack_default_gray.png";
@@ -156,7 +156,6 @@ public class TheHuntedMod implements
 
     @Override
     public void receivePostPowerApplySubscriber(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        logger.info("---POST POWER APPLY---");
         PowerWatcherService.powerApplied(source, target, power);
     }
 
@@ -184,8 +183,10 @@ public class TheHuntedMod implements
         BaseMod.addCard(new CorrodeCard());
         BaseMod.addCard(new CrashingBlowCard());
         BaseMod.addCard(new Defend());
+        BaseMod.addCard(new DesperateStrikeCard());
         BaseMod.addCard(new EntropyProjectorCard());
         BaseMod.addCard(new EvadeCard());
+        BaseMod.addCard(new HereGoesNothingCard());
         BaseMod.addCard(new HyperpropellantCard());
         BaseMod.addCard(new OffensiveReboundCard());
         BaseMod.addCard(new RansackCard());
@@ -204,8 +205,10 @@ public class TheHuntedMod implements
         UnlockTracker.unlockCard(CorrodeCard.ID);
         UnlockTracker.unlockCard(CrashingBlowCard.ID);
         UnlockTracker.unlockCard(Defend.ID);
+        UnlockTracker.unlockCard(DesperateStrikeCard.ID);
         UnlockTracker.unlockCard(EntropyProjectorCard.ID);
         UnlockTracker.unlockCard(EvadeCard.ID);
+        UnlockTracker.unlockCard(HereGoesNothingCard.ID);
         UnlockTracker.unlockCard(HyperpropellantCard.ID);
         UnlockTracker.unlockCard(OffensiveReboundCard.ID);
         UnlockTracker.unlockCard(RansackCard.ID);

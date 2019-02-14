@@ -29,7 +29,6 @@
         },
         {
             "label": "debug",
-            "type": "shell",
             "dependsOn": [
                 "build",
                 "run debug client"

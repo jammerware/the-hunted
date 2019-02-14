@@ -5,5 +5,12 @@
       "ground"
     ],
     "DESCRIPTION": "When you gain ground, the Warden falls back. NL When you lose ground, the Warden closes the distance."
+  },
+  {
+    "PROPER_NAME": "Close",
+    "NAMES": [
+      "close"
+    ],
+    "DESCRIPTION": "The Warden is close to you if she's either \"close behind you\" or \"almost on top of you!\"."
   }
 ]

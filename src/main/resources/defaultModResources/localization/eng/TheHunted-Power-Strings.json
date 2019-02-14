@@ -13,6 +13,13 @@
                         "Your unblocked attacks randomly apply vulnerable, frail, or weak."
                 ]
         },
+        "TheHunted:HereGoesNothingPower": {
+                "NAME": "Here goes nothing...",
+                "FLAVOR": "You're flying higher than an eagle. Also, you may die.",
+                "DESCRIPTIONS": [
+                        "If the Warden catches you this turn, you die."
+                ]
+        },
         "TheHunted:ImmuneResponsePower": {
                 "NAME": "Immune Response",
                 "FLAVOR": "Somebody's been drinking their OJ!",

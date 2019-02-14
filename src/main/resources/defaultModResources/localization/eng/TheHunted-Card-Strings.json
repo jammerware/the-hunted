@@ -28,6 +28,10 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "TheHunted:DesperateStrike": {
+    "NAME": "Desperate Strike",
+    "DESCRIPTION": "Deal !D! damage. If the Warden is close to you, deal !D! damage again."
+  },
   "TheHunted:EntropyProjector": {
     "NAME": "Entropy Projector",
     "DESCRIPTION": "Costs 1 less [E] for each debuff you've applied to yourself this combat. NL Gain !B! Block."
@@ -35,6 +39,10 @@
   "TheHunted:Evade": {
     "NAME": "Evade",
     "DESCRIPTION": "Gain !B! Block. NL Gain !TheHunted:WardenGainLoseAmountVariable! ground. NL NL Next turn, apply !M! Weak to yourself."
+  },
+  "TheHunted:HereGoesNothing": {
+    "NAME": "Here Goes Nothing...",
+    "DESCRIPTION": "Gain !TheHunted:WardenGainLoseAmountVariable! ground. NL Play and exhaust the next !M! cards in your draw pile. If the Warden catches you this turn, you die."
   },
   "TheHunted:Hyperpropellant": {
     "NAME": "Hyperpropellant",
