@@ -84,12 +84,7 @@ public class TheHuntedMod implements
     public static final String THE_DEFAULT_SKELETON_JSON = "defaultModResources/images/char/defaultCharacter/skeleton.json";
 
     public TheHuntedMod() {
-        logger.info("Subscribe to BaseMod hooks");
-
         BaseMod.subscribe(this);
-
-        logger.info("Done subscribing");
-        logger.info("Creating the color " + AbstractCardEnum.HUNTED_ORANGE.toString());
 
         BaseMod.addColor(
             AbstractCardEnum.HUNTED_ORANGE, 
@@ -110,30 +105,25 @@ public class TheHuntedMod implements
             ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, 
             CARD_ENERGY_ORB
         );
-
-        logger.info("Done creating the color");
     }
 
     @SuppressWarnings("unused")
     public static void initialize() {
-        logger.info("========================= Initializing The Hunted. Hi. =========================");
         TheHuntedMod mod = new TheHuntedMod();
-        logger.info("========================= /The Hunted is good to go./ =========================");
     }
 
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheHuntedEnum.THE_HUNTED.toString());
-
-        BaseMod.addCharacter(new TheHuntedCharacter(makeID("TheHuntedCharacter"), TheHuntedEnum.THE_HUNTED), THE_DEFAULT_BUTTON,
-                THE_DEFAULT_PORTRAIT, TheHuntedEnum.THE_HUNTED);
-
-        logger.info("Added " + TheHuntedEnum.THE_HUNTED.toString());
+        BaseMod.addCharacter(
+            new TheHuntedCharacter(makeID("TheHuntedCharacter"), TheHuntedEnum.THE_HUNTED), 
+            THE_DEFAULT_BUTTON,
+            THE_DEFAULT_PORTRAIT, 
+            TheHuntedEnum.THE_HUNTED
+        );
     }
 
     @Override
     public void receivePostInitialize() {
-        logger.info("Loading badge image and mod options");
         // Load the Mod Badge
         Texture badgeTexture = new Texture(BADGE_IMAGE);
 
@@ -144,8 +134,6 @@ public class TheHuntedMod implements
                         400.0f, 700.0f, settingsPanel, (me) -> {
                         }));
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
-
-        logger.info("Done loading badge Image and mod options");
 
     }
 
@@ -223,8 +211,6 @@ public class TheHuntedMod implements
 
     @Override
     public void receiveEditStrings() {
-        logger.info("Beginning to edit strings");
-
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 "defaultModResources/localization/eng/TheHunted-Card-Strings.json");
@@ -240,8 +226,6 @@ public class TheHuntedMod implements
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 "defaultModResources/localization/eng/TheHunted-Character-Strings.json");
-
-        logger.info("Done editing strings");
     }
 
     @Override

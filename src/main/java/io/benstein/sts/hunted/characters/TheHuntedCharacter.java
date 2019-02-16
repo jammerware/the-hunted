@@ -41,8 +41,6 @@ import io.benstein.sts.hunted.relics.BrokenManaclesRelic;
 public class TheHuntedCharacter extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
 
-    // =============== BASE STATS =================
-
     public static final int ENERGY_PER_TURN = 3;
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
@@ -50,16 +48,10 @@ public class TheHuntedCharacter extends CustomPlayer {
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
 
-    // =============== /BASE STATS/ =================
-
-    // =============== STRINGS =================
-
     private static final String ID = makeID("TheHuntedCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
-
-    // =============== /STRINGS/ =================
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
@@ -76,9 +68,6 @@ public class TheHuntedCharacter extends CustomPlayer {
             "defaultModResources/images/char/defaultCharacter/orb/layer5d.png", };
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
-
-    // =============== CHARACTER CLASS START =================
-
     public TheHuntedCharacter(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, "defaultModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
@@ -108,8 +97,6 @@ public class TheHuntedCharacter extends CustomPlayer {
         dialogY = (drawY + 220.0F * Settings.scale); // you can just copy these values
 
     }
-
-    // =============== /CHARACTER CLASS END/ =================
 
     // Starting description and loadout
     @Override
@@ -163,9 +150,8 @@ public class TheHuntedCharacter extends CustomPlayer {
     // Character Select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f); // Sound Effect
-        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false); // Screen
-                                                                                                            // Effect
+        CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f);
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false);                                                                                                       // Effect
     }
 
     // Character Select on-button-press sound effect
@@ -245,8 +231,11 @@ public class TheHuntedCharacter extends CustomPlayer {
     // Attack effects are the same as used in DamageAction and the like.
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
-        return new AbstractGameAction.AttackEffect[] { AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY, AbstractGameAction.AttackEffect.BLUNT_HEAVY };
+        return new AbstractGameAction.AttackEffect[] { 
+            AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+            AbstractGameAction.AttackEffect.BLUNT_HEAVY, 
+            AbstractGameAction.AttackEffect.BLUNT_HEAVY 
+        };
     }
 
     // Should return a string containing what text is shown when your character is
