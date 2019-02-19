@@ -176,6 +176,7 @@ public class TheHuntedMod implements
         BaseMod.addCard(new EvadeCard());
         BaseMod.addCard(new HereGoesNothingCard());
         BaseMod.addCard(new HyperpropellantCard());
+        BaseMod.addCard(new JuxtapositionCard());
         BaseMod.addCard(new OffensiveReboundCard());
         BaseMod.addCard(new RansackCard());
         BaseMod.addCard(new ScrambleCard());
@@ -198,6 +199,7 @@ public class TheHuntedMod implements
         UnlockTracker.unlockCard(EvadeCard.ID);
         UnlockTracker.unlockCard(HereGoesNothingCard.ID);
         UnlockTracker.unlockCard(HyperpropellantCard.ID);
+        UnlockTracker.unlockCard(JuxtapositionCard.ID);
         UnlockTracker.unlockCard(OffensiveReboundCard.ID);
         UnlockTracker.unlockCard(RansackCard.ID);
         UnlockTracker.unlockCard(ScrambleCard.ID);

@@ -49,6 +49,10 @@
     "DESCRIPTION": "Gain X ground. NL Gain !B! Block X times.",
     "UPGRADE_DESCRIPTION": "Gain X ground. NL Gain !B! + !M! Block X times."
   },
+  "TheHunted:Juxtaposition": {
+    "NAME": "Juxtaposition",
+    "DESCRIPTION": "Exchange block amounts with your target."
+  },
   "TheHunted:OffensiveReboundCard": {
     "NAME": "Offensive Rebound",
     "DESCRIPTION": "Deal !D! damage and apply weak. If this attack is unblocked, return it to your hand."

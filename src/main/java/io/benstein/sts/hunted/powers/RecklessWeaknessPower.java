@@ -34,8 +34,8 @@ public class RecklessWeaknessPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner,  new WeakPower(this.owner, this.amount, false), 1));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner,  new WeakPower(this.owner, this.amount, false), 1));
     }
 
     @Override

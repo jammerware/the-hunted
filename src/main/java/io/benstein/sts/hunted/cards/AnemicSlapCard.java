@@ -52,7 +52,8 @@ public class AnemicSlapCard extends CustomCard {
                 new ApplyPowerAction(
                     player,
                     player,
-                    new RecklessWeaknessPower(player, this.magicNumber)
+                    new RecklessWeaknessPower(player, this.magicNumber),
+                    1
                 )
             );
     }
