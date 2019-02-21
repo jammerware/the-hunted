@@ -13,6 +13,14 @@ import basemod.abstracts.CustomCard;
 import io.benstein.sts.hunted.TheHuntedMod;
 import io.benstein.sts.hunted.patches.AbstractCardEnum;
 
+/* 
+    Ransack
+    https://trello.com/c/OcwgmV3g/7-ransack
+    Common Skill | 1
+
+    Draw 2 (3) cards.
+    Discard 2 cards.
+*/
 public class RansackCard extends CustomCard {
     public static final String ID = TheHuntedMod.makeID("Ransack");
 
@@ -21,9 +29,10 @@ public class RansackCard extends CustomCard {
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.NONE;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int BASE_DRAW = 2;
     private static final int UPGRADE_DRAW = 1;
+    private static final int DISCARD = 2;
     
     public static final AbstractCard.CardColor COLOR = AbstractCardEnum.HUNTED_ORANGE;
     public static final String NAME = cardStrings.NAME;
@@ -47,7 +56,7 @@ public class RansackCard extends CustomCard {
         // discard a card
         AbstractDungeon
             .actionManager
-            .addToBottom(new DiscardAction(player, player, 1, false));
+            .addToBottom(new DiscardAction(player, player, DISCARD, false));
     }
 
     @Override

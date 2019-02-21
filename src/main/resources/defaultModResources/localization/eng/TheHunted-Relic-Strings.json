@@ -1,17 +1,23 @@
 {
-
-	"TheHunted:PerseveranceRelic": {
-		"NAME": "Perseverance",
-		"FLAVOR": "It's not over yet.",
-		"DESCRIPTIONS": [
-			"When you shuffle your deck, gain ground."
-		]
-	},
 	"TheHunted:BrokenManaclesRelic": {
 		"NAME": "Broken Manacles",
 		"FLAVOR": "It's not over yet.",
 		"DESCRIPTIONS": [
 			"The Warden is chasing you. When she catches you, your turn ends, you gain 2 weak, 2 vulnerable, and 2 frail."
+		]
+	},
+	"TheHunted:HazmatSuitRelic": {
+		"NAME": "Hazmat Suit",
+		"FLAVOR": "You're clear to take on biohazard you might encounter. You can also, at least from the perspective of patholoy, safely date Charlie Sheen.",
+		"DESCRIPTIONS": [
+			"When a debuff expires or is removed from you, gain 2 health."
+		]
+	},
+	"TheHunted:PerseveranceRelic": {
+		"NAME": "Perseverance",
+		"FLAVOR": "It's not over yet.",
+		"DESCRIPTIONS": [
+			"When you shuffle your deck, gain ground."
 		]
 	}
 }

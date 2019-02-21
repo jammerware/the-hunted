@@ -149,9 +149,8 @@ public class TheHuntedMod implements
 
     @Override
     public void receiveEditRelics() {
-        logger.debug("Adding relics");
         BaseMod.addRelicToCustomPool(new BrokenManaclesRelic(), AbstractCardEnum.HUNTED_ORANGE);
-        logger.debug("Done adding relics!");
+        BaseMod.addRelicToCustomPool(new HazmatSuitRelic(), AbstractCardEnum.HUNTED_ORANGE);
     }
 
     @Override

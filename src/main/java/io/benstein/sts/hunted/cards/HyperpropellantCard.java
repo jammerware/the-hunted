@@ -51,21 +51,30 @@ public class HyperpropellantCard extends AbstractWardenGroundCard {
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        // X times
-        for(int i = 0; i < magicNumber; i++) {
-            // gain ground
-            AbstractDungeon
-                .actionManager
-                .addToBottom(new WardenGainLoseGroundAction(player, wardenGainLoseAmount));
+        int numberOfInstances = this.energyOnUse + this.magicNumber;
+
+        // have to do this bullshit because Chemical X (yes, this is how they do it too)
+        // i'll encapsulate this if i have to do it again because that's how i get down
+        if (player.hasRelic("Chemical X")) {
+            numberOfInstances += 2;
+            player.getRelic("Chemical X").flash();
         }
-        
+
+        // consume the E 
+        player.energy.use(this.energyOnUse);
+
         // X times
-        for(int i = 0; i < magicNumber; i++) {
+        for(int i = 0; i < numberOfInstances; i++) {
             // gain block
             AbstractDungeon
                 .actionManager
-                .addToBottom(new GainBlockAction(player, player, block + magicNumber));
+                .addToBottom(new GainBlockAction(player, player, block));
         }
+
+        // gain X ground
+        AbstractDungeon
+            .actionManager
+            .addToBottom(new WardenGainLoseGroundAction(player, -numberOfInstances));
     }
 
     @Override

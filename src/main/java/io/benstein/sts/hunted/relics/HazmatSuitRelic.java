@@ -2,18 +2,22 @@ package io.benstein.sts.hunted.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import io.benstein.sts.hunted.TheHuntedMod;
-import io.benstein.sts.hunted.powers.WardenPower;
+import io.benstein.sts.hunted.interfaces.PowerRemovedListener;
+import io.benstein.sts.hunted.services.PowerWatcherService;
 
-public class HazmatSuitRelic extends CustomRelic {
+public class HazmatSuitRelic extends CustomRelic implements PowerRemovedListener {
     public static final String ID = TheHuntedMod.makeID(HazmatSuitRelic.class.getSimpleName());
     public static final String IMG = "defaultModResources/images/relics/hazmat-suit.png";
     public static final String OUTLINE = "defaultModResources/images/relics/hazmat-suit-outline.png";
@@ -21,17 +25,8 @@ public class HazmatSuitRelic extends CustomRelic {
     private static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
 
     public HazmatSuitRelic() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), AbstractRelic.RelicTier.STARTER,
-                AbstractRelic.LandingSound.FLAT);
-    }
-
-    @Override
-    public void atBattleStartPreDraw() {
-        logger.info("Pre-battle: applying Warden power");
-
-        flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new WardenPower(AbstractDungeon.player)));
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), AbstractRelic.RelicTier.COMMON, AbstractRelic.LandingSound.FLAT);
+        PowerWatcherService.registerPowerRemovedListener(this);
     }
 
     @Override
@@ -42,5 +37,20 @@ public class HazmatSuitRelic extends CustomRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new HazmatSuitRelic();
+    }
+
+    @Override
+    protected void finalize() {
+        PowerWatcherService.unregisterPowerRemovedListener(this);
+    }
+
+    public void onPowerRemoved(AbstractCreature owner, AbstractPower power) {
+        if (owner.isPlayer && power.type == PowerType.DEBUFF && !PowerWatcherService.isPowerDebuffBlacklisted(power)) {
+            logger.debug("Power " + power.name + " fell off the player, healing");
+            this.flash();
+            AbstractDungeon
+                .actionManager
+                .addToTop(new HealAction(owner, owner, 2));
+        }
     }
 }
