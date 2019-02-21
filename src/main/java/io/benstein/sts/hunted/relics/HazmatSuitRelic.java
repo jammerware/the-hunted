@@ -17,6 +17,13 @@ import io.benstein.sts.hunted.TheHuntedMod;
 import io.benstein.sts.hunted.interfaces.PowerRemovedListener;
 import io.benstein.sts.hunted.services.PowerWatcherService;
 
+/* 
+    Hazmat Suit
+    https://trello.com/c/6w9AiEJm/32-hazmat-suit
+    Common Relic
+
+    When a debuff expires or is removed from you, gain 2 health.
+*/
 public class HazmatSuitRelic extends CustomRelic implements PowerRemovedListener {
     public static final String ID = TheHuntedMod.makeID(HazmatSuitRelic.class.getSimpleName());
     public static final String IMG = "defaultModResources/images/relics/hazmat-suit.png";

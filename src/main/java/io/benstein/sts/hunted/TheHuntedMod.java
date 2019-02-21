@@ -31,6 +31,7 @@ import io.benstein.sts.hunted.patches.AbstractCardEnum;
 import io.benstein.sts.hunted.patches.TheHuntedEnum;
 import io.benstein.sts.hunted.relics.*;
 import io.benstein.sts.hunted.services.PowerWatcherService;
+import io.benstein.sts.hunted.services.ShuffleService;
 import io.benstein.sts.hunted.variables.WardenGainLoseAmount;
 
 @SpireInitializer
@@ -151,6 +152,7 @@ public class TheHuntedMod implements
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new BrokenManaclesRelic(), AbstractCardEnum.HUNTED_ORANGE);
         BaseMod.addRelicToCustomPool(new HazmatSuitRelic(), AbstractCardEnum.HUNTED_ORANGE);
+        BaseMod.addRelicToCustomPool(new RottenFishheadRelic(ShuffleService.getInstance()), AbstractCardEnum.HUNTED_ORANGE);
     }
 
     @Override

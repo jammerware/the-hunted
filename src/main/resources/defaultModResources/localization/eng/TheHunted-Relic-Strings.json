@@ -13,9 +13,9 @@
 			"When a debuff expires or is removed from you, gain 2 health."
 		]
 	},
-	"TheHunted:PerseveranceRelic": {
-		"NAME": "Perseverance",
-		"FLAVOR": "It's not over yet.",
+	"TheHunted:RottenFishheadRelic": {
+		"NAME": "Rotten Fishhead",
+		"FLAVOR": "Yuck. No wonder she's not chasing you as hard as she could.",
 		"DESCRIPTIONS": [
 			"When you shuffle your deck, gain ground."
 		]
