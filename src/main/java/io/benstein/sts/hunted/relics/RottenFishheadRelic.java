@@ -17,8 +17,8 @@ import io.benstein.sts.hunted.services.ShuffleService;
 
 public class RottenFishheadRelic extends CustomRelic implements ShuffleListener {
     public static final String ID = TheHuntedMod.makeID("RottenFishheadRelic");
-    public static final String IMG = "defaultModResources/images/relics/broken-manacles.png";
-    public static final String OUTLINE = "defaultModResources/images/relics/broken-manacles-outline.png";
+    public static final String IMG = "defaultModResources/images/relics/rotten-fishhead.png";
+    public static final String OUTLINE = "defaultModResources/images/relics/rotten-fishhead-outline.png";
     private static final Logger logger = LogManager.getLogger(TheHuntedMod.class.getName());
 
     private ShuffleService _shuffleService;
