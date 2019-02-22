@@ -34,6 +34,14 @@
                         "When you shuffle your deck, gain ground."
                 ]
         },
+        "TheHunted:PrototypeTurretPower": {
+                "NAME": "Prototype Turret",
+                "FLAVOR": "It totally works. Probably.",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, deal ",
+                        " damage to a random enemy. Hopefully it doesn't hit you instead."
+                ]
+        },
         "TheHunted:RecklessFrailtyPower": {
                 "NAME": "Reckless Frailty",
                 "FLAVOR": "Whoops.",
